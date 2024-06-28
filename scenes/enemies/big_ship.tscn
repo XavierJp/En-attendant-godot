@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv4n13138k31v"]
+
+[ext_resource type="PackedScene" uid="uid://c6m48a0b3767r" path="res://scenes/enemies/enemy.tscn" id="1_ts678"]
+[ext_resource type="Script" path="res://scenes/enemies/big_ship.gd" id="2_pcm1u"]
+
+[node name="Enemy" instance=ExtResource("1_ts678")]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_pcm1u")

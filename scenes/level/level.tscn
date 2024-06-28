@@ -31,10 +31,10 @@ unique_name_in_owner = true
 
 [node name="ProgressBar2" type="ProgressBar" parent="Player"]
 unique_name_in_owner = true
-offset_left = -545.0
-offset_top = -300.0
-offset_right = -127.0
-offset_bottom = -273.0
+offset_left = -935.0
+offset_top = -514.0
+offset_right = -517.0
+offset_bottom = -487.0
 theme = ExtResource("4_xxbw1")
 theme_override_fonts/font = ExtResource("5_o6ok1")
 theme_override_font_sizes/font_size = 20

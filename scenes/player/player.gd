@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if overlapping_enemies.size() > 0:
 		health -= overlapping_enemies.size()
 		print(health)
-		get_node("ProgressBar2").value = health
+		get_node('ProgressBar2').value = health
 		if health <= 0.0:
 			queue_free()
 			print("game OVER !!!!")

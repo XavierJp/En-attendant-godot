@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://02a8chd2ikkf"]
+
+[ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/font/pixelmix/pixelmix_bold.ttf" id="1_frod3"]
+
+[resource]
+default_font = ExtResource("1_frod3")

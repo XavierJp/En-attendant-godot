@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://biu0jvckrekjw"]
+
+[ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="1_qs8lm"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.202
+offset_left = -138.0
+offset_top = -53.0
+offset_right = -244.84
+offset_bottom = 40.0
+theme = ExtResource("1_qs8lm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Pause
+"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Label"]
+layout_mode = 0
+offset_left = -150.0
+offset_top = 119.0
+offset_right = 430.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 40
+text = "Press ESC to resume"
+horizontal_alignment = 1
+vertical_alignment = 1

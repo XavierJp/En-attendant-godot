@@ -1,12 +1,16 @@
 extends Node2D
 
-func _input(ev):
-	if ev is InputEventKey :
-		if ev.keycode == KEY_ESCAPE:
-			get_tree().paused = true
-			get_node("Player/PauseScreen").set_visible(true)
-	
+@onready var pause_menu = $Player/Camera2D/PauseMenu
+var paused = false
 
+func pause():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused = !paused
 
 func _ready():
 	print("The one and only history has ", OneHistory.Bible.size(), " chapiters.")
@@ -14,6 +18,9 @@ func _ready():
 		spawn_ghost(inputs)
 
 func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pause()
+		
 	var level = abs(%Player.global_position.x) / 5000 + 1
 	%SpawnMobTimer.wait_time = 3 / level
 
@@ -29,7 +36,5 @@ func spawn_ghost(inputs: PackedVector2Array):
 	add_child(ghost)
 
 func _on_timer_timeout():
-	print(%Timer.wait_time)
-	print(%Player.global_position.x)
 	var new_enemy = preload("res://scenes/enemies/small_ship.tscn").instantiate()
 	spawn_enemy(new_enemy)

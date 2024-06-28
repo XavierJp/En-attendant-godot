@@ -4408,6 +4408,7 @@ autoplay = "black_hole"
 frame_progress = 0.625288
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 168.0
 offset_right = 1050.0
@@ -4427,6 +4428,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 350.0
 offset_right = 1050.0
@@ -4443,6 +4445,7 @@ theme = ExtResource("2_5cs5l")
 text = "As the time bomb explodes, the ship gets sucked in a black hole. "
 
 [node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 808.0
 offset_right = 1050.0

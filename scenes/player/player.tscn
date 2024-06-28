@@ -14,7 +14,7 @@ size = Vector2(70, 100)
 script = ExtResource("1_8v1w1")
 
 [node name="ShieldWeapon" parent="." instance=ExtResource("3_wm5qy")]
-visible = true
+modulate = Color(0.231373, 1, 1, 0.662745)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

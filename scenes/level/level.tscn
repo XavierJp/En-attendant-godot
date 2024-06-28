@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
-[ext_resource type="PackedScene" uid="uid://c3pp1wys3b75j" path="res://scenes/UIs/pause_screen.tscn" id="6_5u23d"]
+[ext_resource type="PackedScene" path="res://scenes/UIs/pause_screen.tscn" id="6_5u23d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk0k"]
 bg_color = Color(0.321569, 0.00784314, 0.0509804, 1)
@@ -60,9 +60,9 @@ offset_right = -1034.0
 offset_bottom = -537.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SpawnMobTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnMobTimer" to="." method="_on_timer_timeout"]

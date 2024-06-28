@@ -28,3 +28,9 @@ func _physics_process(delta):
 		if health <= 0:
 			OneHistory.end_of_chapiter()
 			get_tree().change_scene_to_file("res://scenes/UIs/game_over.tscn")
+
+
+func _on_bullet_timer_timeout():
+	var bullet = preload("res://scenes/Weapons/bullet.tscn")
+	var new_bullet = bullet.instantiate()
+	$ProjectileStartPosition.add_child(new_bullet)

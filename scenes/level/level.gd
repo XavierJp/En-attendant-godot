@@ -37,30 +37,19 @@ func spawn_ghost(inputs: PackedVector2Array):
 	var ghost: Ghost = ghost_asset.instantiate()
 	ghost.set_inputs(inputs)
 	add_child(ghost)
-
-<<<<<<< HEAD
-func _on_spawn_small_ship_timer_timeout():
-	var new_enemy = preload("res://scenes/enemies/small_ship.tscn").instantiate()
-||||||| parent of d189503 (feat: big ship)
-func _on_timer_timeout():
-	print(%Timer.wait_time)
-	print(%Player.global_position.x)
-	var new_enemy = preload("res://scenes/enemies/small_ship.tscn").instantiate()
-=======
+	
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 
-func _on_timer_timeout():
-	print(%Player.global_position.x)
-	
+func _on_spawn_small_ship_timer_timeout():
 	var new_enemy
-	var should_spaw_bigger_ship = %Player.global_position.x > 1000 and randi() % 20 == 0
+	var level = abs(%Player.global_position.x) / 5000 + 1
+	print(level)
+	var should_spaw_bigger_ship =  %Player.global_position.x > 100 and randi() % 20 == 0
 	if (should_spaw_bigger_ship) :
 		new_enemy = big_ship_asset.instantiate()
 	else:
 		new_enemy = small_ship_asset.instantiate()
 	
->>>>>>> d189503 (feat: big ship)
 	spawn_enemy(new_enemy)
-	var level = abs(%Player.global_position.x) / 5000 + 1
 	$SpawnSmallShipTimer.wait_time = 3 / level

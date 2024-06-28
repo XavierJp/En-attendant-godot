@@ -55,9 +55,8 @@ theme = ExtResource("4_xxbw1")
 theme_override_font_sizes/font_size = 60
 text = "0"
 
-[node name="SpawnMobTimer" type="Timer" parent="."]
-unique_name_in_owner = true
+[node name="SpawnSmallShipTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
-[connection signal="timeout" from="SpawnMobTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnSmallShipTimer" to="." method="_on_spawn_small_ship_timer_timeout"]

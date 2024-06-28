@@ -7,6 +7,12 @@ func _input(ev):
 			get_node("Player/PauseScreen").set_visible(true)
 	
 
+
+func _ready():
+	print("The one and only history has ", OneHistory.Bible.size(), " chapiters.")
+	for inputs in OneHistory.Bible :
+		spawn_ghost(inputs)
+
 func _process(delta):
 	var level = abs(%Player.global_position.x) / 5000 + 1
 	%Timer.wait_time = 3 / level
@@ -20,6 +26,10 @@ func spawn_mob():
 	
 	add_child(new_mob)
 
+func spawn_ghost(inputs: PackedVector2Array):
+	var ghost: Ghost = preload("res://scenes/player/ghost.tscn").instantiate()
+	ghost.set_inputs(inputs)
+	add_child(ghost)
 
 func _on_timer_timeout():
 	print(%Timer.wait_time)

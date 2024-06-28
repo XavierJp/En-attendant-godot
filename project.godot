@@ -15,6 +15,10 @@ run/main_scene="res://scenes/UIs/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+OneHistory="*res://scenes/player/one_history.gd"
+
 [display]
 
 window/size/viewport_width=1920

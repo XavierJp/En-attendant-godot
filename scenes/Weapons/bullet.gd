@@ -1,8 +1,8 @@
 extends Area2D
 
 var travelled_distance = 0
-const SPEED = 1000
-const RANGE = 1200
+const SPEED = 2000
+const RANGE = 12000
 const damage = 25
 
 func _process(delta):
@@ -11,8 +11,6 @@ func _process(delta):
 	travelled_distance += SPEED * delta
 	if travelled_distance > RANGE:
 		queue_free()
-
-
 
 func _on_body_entered(body):
 	queue_free()

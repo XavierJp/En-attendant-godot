@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var health = 100
-var speed = 60000
+var speed = 40000
 
 func _ready():
 	get_node("Score").text = str(0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=4 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="PackedScene" uid="uid://bjq1a3fx722x3" path="res://scenes/player/player.tscn" id="1_we2oi"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
+[ext_resource type="PackedScene" uid="uid://c6m48a0b3767r" path="res://scenes/enemies/enemy.tscn" id="3_drxos"]
 
 [node name="Level" type="Node2D"]
 
@@ -14,3 +15,12 @@ position = Vector2(0, 1000)
 
 [node name="Wall2" parent="." instance=ExtResource("2_xgegu")]
 position = Vector2(0, -1000)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_drxos")]
+position = Vector2(420, 175)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_drxos")]
+position = Vector2(476, 8)
+
+[node name="Enemy" parent="." instance=ExtResource("3_drxos")]
+position = Vector2(491, -177)

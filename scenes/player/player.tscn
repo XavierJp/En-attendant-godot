@@ -11,6 +11,7 @@ size = Vector2(52, 91)
 size = Vector2(70, 100)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 53
 script = ExtResource("1_8v1w1")
 
 [node name="ShieldWeapon" parent="." instance=ExtResource("3_wm5qy")]
@@ -28,6 +29,7 @@ shape = SubResource("RectangleShape2D_11888")
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 53
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_7yk41")

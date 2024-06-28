@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const speed = 30000
-var health = 5
+var health = 50
 var player
 
 func _ready():

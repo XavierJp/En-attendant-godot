@@ -25,3 +25,12 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="Main Player"
+2d_physics/layer_2="Phantom Players"
+2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Allied Weapons"
+2d_physics/layer_5="Enemy Weapons"
+2d_physics/layer_6="Static Walls"

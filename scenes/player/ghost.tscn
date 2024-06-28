@@ -11,10 +11,12 @@ size = Vector2(52, 91)
 size = Vector2(70, 100)
 
 [node name="Ghost" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 32
 script = ExtResource("1_lawtr")
 
 [node name="ShieldWeapon" parent="." instance=ExtResource("2_055w0")]
-scale = Vector2(2, 2)
+scale = Vector2(10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -24,7 +26,6 @@ texture = ExtResource("3_p46jd")
 [node name="ColisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_11888")
-disabled = true
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true

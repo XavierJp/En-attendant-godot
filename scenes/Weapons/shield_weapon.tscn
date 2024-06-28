@@ -120,6 +120,8 @@ animations = [{
 radius = 49.5177
 
 [node name="ShieldWeapon" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_a6go3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

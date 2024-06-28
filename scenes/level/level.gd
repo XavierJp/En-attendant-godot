@@ -18,8 +18,13 @@ func _ready():
 		spawn_ghost(inputs)
 
 func _process(delta):
+	# Check for pause
 	if Input.is_action_just_pressed("pause"):
 		pause()
+	
+	# Score
+	var score = int(%Player.global_position.x / 1000)
+	$Player/Score.text = str(score)
 
 func spawn_enemy(new_enemy):
 	new_enemy.global_position = %Player.global_position 

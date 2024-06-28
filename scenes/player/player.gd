@@ -13,8 +13,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	# score
-	var score = int(global_position.x / 1000)
-	get_node("Score").text = str(score)
 	
 	# damages taken
 	var overlapping_bodies = %HitBox.get_overlapping_bodies()

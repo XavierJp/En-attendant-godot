@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://81kv68i0jc75"]
+
+[ext_resource type="Script" path="res://scenes/player/ghost.gd" id="1_lawtr"]
+[ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/shield_weapon.tscn" id="2_055w0"]
+[ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_p46jd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
+size = Vector2(52, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yk41"]
+size = Vector2(70, 100)
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_lawtr")
+
+[node name="ShieldWeapon" parent="." instance=ExtResource("2_055w0")]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.73974, 1.73974)
+texture = ExtResource("3_p46jd")
+
+[node name="ColisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_11888")
+disabled = true
+
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_7yk41")

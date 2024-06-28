@@ -1,26 +1,30 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjq1a3fx722x3"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8v1w1"]
-[ext_resource type="Texture2D" uid="uid://bh6w4b0010nbr" path="res://assets/player/square.png" id="1_r7slg"]
 [ext_resource type="PackedScene" uid="uid://dom8dcx3y24w6" path="res://scenes/Weapons/weapon.tscn" id="2_5na26"]
+[ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_lkcqk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_myeij"]
-size = Vector2(68, 68)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
+size = Vector2(52, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yk41"]
-size = Vector2(70, 70)
+size = Vector2(70, 100)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8v1w1")
 
 [node name="Weapon" parent="." instance=ExtResource("2_5na26")]
+visible = true
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_r7slg")
+rotation = 1.5708
+scale = Vector2(1.73974, 1.73974)
+texture = ExtResource("3_lkcqk")
 
 [node name="ColisionBox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_myeij")
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_11888")
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true

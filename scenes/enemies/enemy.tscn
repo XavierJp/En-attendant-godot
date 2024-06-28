@@ -1,16 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6m48a0b3767r"]
 
-[ext_resource type="Texture2D" uid="uid://dhqy0miv0qnyb" path="res://assets/enemies/enemy.png" id="1_gl687"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_uggao"]
+[ext_resource type="Texture2D" uid="uid://dbwchl7vvtyej" path="res://assets/enemies/tiny_ship9.png" id="2_r2ql7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uogu"]
-size = Vector2(56, 60)
+size = Vector2(52, 60)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_uggao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_gl687")
+rotation = 1.5708
+scale = Vector2(1.75414, 1.75414)
+texture = ExtResource("2_r2ql7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7uogu")

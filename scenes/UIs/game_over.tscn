@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://xwpxg8qp8tpl"]
+
+[ext_resource type="Script" path="res://scenes/UIs/game_over.gd" id="1_i0rkl"]
+[ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="2_5cs5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2psa"]
+font_size = 80
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0rkl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 307.0
+offset_right = 700.0
+offset_bottom = 351.0
+theme = ExtResource("2_5cs5l")
+text = "Start Again"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 143.0
+offset_right = 853.0
+offset_bottom = 271.0
+theme = ExtResource("2_5cs5l")
+text = "Game Over !"
+label_settings = SubResource("LabelSettings_q2psa")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

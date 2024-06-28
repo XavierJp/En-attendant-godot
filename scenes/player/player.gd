@@ -15,6 +15,6 @@ func _physics_process(delta):
 		health -= overlapping_enemies.size()
 		print(health)
 		get_node('ProgressBar2').value = health
-		if health <= 0.0:
-			queue_free()
-			print("game OVER !!!!")
+		
+		if health <= 0:
+			get_tree().change_scene_to_file("res://scenes/UIs/game_over.tscn")

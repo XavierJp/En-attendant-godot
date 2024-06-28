@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bnixuen4whja8"
-path="res://.godot/imported/pixelmix_bold.ttf-d17657995b01c6d0377491cd2cbc7f98.fontdata"
+uid="uid://b6tdeof3tpo0v"
+path="res://.godot/imported/pixelmix.ttf-b85b446d701504545e34d30a71206cf6.fontdata"
 
 [deps]
 
-source_file="res://assets/font/pixelmix/pixelmix_bold.ttf"
-dest_files=["res://.godot/imported/pixelmix_bold.ttf-d17657995b01c6d0377491cd2cbc7f98.fontdata"]
+source_file="res://assets/fonts/pixelmix/pixelmix.ttf"
+dest_files=["res://.godot/imported/pixelmix.ttf-b85b446d701504545e34d30a71206cf6.fontdata"]
 
 [params]
 

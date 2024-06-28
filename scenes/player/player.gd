@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 var health = 100
+var speed = 60000
 
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = direction * 600
+	velocity = direction * speed * delta
 	move_and_slide()
 		
 	var overlapping_bodies = %HitBox.get_overlapping_bodies()

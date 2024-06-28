@@ -14,20 +14,20 @@ script = ExtResource("1_rb0yl")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 229.0
-offset_right = 654.0
-offset_bottom = 273.0
+offset_left = 815.0
+offset_top = 299.0
+offset_right = 1100.0
+offset_bottom = 439.0
 theme = ExtResource("2_ac7oj")
 text = "Start
 "
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 395.0
-offset_right = 655.0
-offset_bottom = 439.0
+offset_left = 816.0
+offset_top = 617.0
+offset_right = 1101.0
+offset_bottom = 756.0
 theme = ExtResource("2_ac7oj")
 text = "Quit
 "

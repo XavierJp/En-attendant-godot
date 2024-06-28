@@ -17,19 +17,19 @@ script = ExtResource("1_i0rkl")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 307.0
-offset_right = 700.0
-offset_bottom = 351.0
+offset_left = 860.0
+offset_top = 613.0
+offset_right = 1068.0
+offset_bottom = 657.0
 theme = ExtResource("2_5cs5l")
 text = "Start Again"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 143.0
-offset_right = 853.0
-offset_bottom = 271.0
+offset_left = 675.0
+offset_top = 348.0
+offset_right = 1335.0
+offset_bottom = 476.0
 theme = ExtResource("2_5cs5l")
 text = "Game Over !"
 label_settings = SubResource("LabelSettings_q2psa")

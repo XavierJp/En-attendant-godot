@@ -5,8 +5,6 @@ func _process(delta):
 	var level = abs(%Player.global_position.x) / 5000 + 1
 	%Timer.wait_time = 3 / level
 
-
-
 func spawn_mob():
 	var new_mob = preload("res://scenes/enemies/enemy.tscn").instantiate()
 

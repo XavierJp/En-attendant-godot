@@ -1,22 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=6 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://bjq1a3fx722x3" path="res://scenes/player/player.tscn" id="1_we2oi"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
+[ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/font/pixelmix/pixelmix_bold.ttf" id="4_oj83u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c44ca"]
+bg_color = Color(0.0392157, 0.729412, 0, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rhcvp")
-
-[node name="Player" parent="." instance=ExtResource("1_we2oi")]
-unique_name_in_owner = true
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Wall" parent="." instance=ExtResource("2_xgegu")]
 position = Vector2(0, 1000)
 
 [node name="Wall2" parent="." instance=ExtResource("2_xgegu")]
 position = Vector2(0, -1000)
+
+[node name="Player" parent="." instance=ExtResource("1_we2oi")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="ProgressBar2" type="ProgressBar" parent="Player"]
+unique_name_in_owner = true
+offset_left = -545.0
+offset_top = -300.0
+offset_right = -127.0
+offset_bottom = -273.0
+theme_override_fonts/font = ExtResource("4_oj83u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
+value = 100.0
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

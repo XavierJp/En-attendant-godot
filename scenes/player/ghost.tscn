@@ -16,7 +16,7 @@ collision_mask = 32
 script = ExtResource("1_lawtr")
 
 [node name="ShieldWeapon" parent="." instance=ExtResource("2_055w0")]
-scale = Vector2(10, 10)
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

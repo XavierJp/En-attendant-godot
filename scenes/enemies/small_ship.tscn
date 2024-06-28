@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cigh1yatmoy0j"]
 
 [ext_resource type="PackedScene" uid="uid://c6m48a0b3767r" path="res://scenes/enemies/enemy.tscn" id="1_2ypqn"]
-[ext_resource type="Script" path="res://SmallShip.gd" id="2_rgnk3"]
+[ext_resource type="Script" path="res://scenes/enemies/SmallShip.gd" id="2_p7shj"]
 [ext_resource type="Texture2D" uid="uid://dbwchl7vvtyej" path="res://assets/enemies/tiny_ship9.png" id="3_i7u8g"]
 
 [node name="SmallShip" instance=ExtResource("1_2ypqn")]
-script = ExtResource("2_rgnk3")
+script = ExtResource("2_p7shj")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_i7u8g")

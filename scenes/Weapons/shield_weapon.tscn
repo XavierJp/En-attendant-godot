@@ -52,7 +52,7 @@ position = Vector2(0, -4)
 scale = Vector2(3.6, 3.6)
 sprite_frames = SubResource("SpriteFrames_aciwv")
 autoplay = "default"
-frame_progress = 0.204558
+frame_progress = 0.0600502
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ocab")

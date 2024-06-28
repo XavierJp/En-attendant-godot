@@ -7,15 +7,13 @@ var player
 
 func _ready():
 	player = get_node("/root/Level/Player")
-	
-func _process(delta):
-	# Go toward player
-	var direction = global_position.direction_to(player.global_position)
-	var distance = global_position.distance_to(player.global_position)
-	velocity = direction * speed * (3 if distance > 500 else 1) * delta
-	rotation = direction.angle()
-	move_and_slide()
 
+func _process(delta: float):
+	move(delta)
+
+func move(delta: float):
+	pass
+	
 func take_damage(damage):
 	health -= damage
 	if health <= 0:

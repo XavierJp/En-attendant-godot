@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=9 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://bjq1a3fx722x3" path="res://scenes/player/player.tscn" id="1_we2oi"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
+[ext_resource type="PackedScene" uid="uid://c3pp1wys3b75j" path="res://scenes/UIs/pause_screen.tscn" id="6_5u23d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk0k"]
 bg_color = Color(0.321569, 0.00784314, 0.0509804, 1)
@@ -41,6 +42,23 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 value = 100.0
+
+[node name="Score" type="Label" parent="Player"]
+offset_left = -933.0
+offset_top = -472.0
+offset_right = -778.0
+offset_bottom = -349.0
+theme = ExtResource("4_xxbw1")
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="PauseScreen" parent="Player" instance=ExtResource("6_5u23d")]
+visible = false
+offset_left = -1034.0
+offset_top = -537.0
+offset_right = -1034.0
+offset_bottom = -537.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

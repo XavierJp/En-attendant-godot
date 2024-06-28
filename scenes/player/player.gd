@@ -3,12 +3,20 @@ extends CharacterBody2D
 var health = 100
 var speed = 60000
 
+func _ready():
+	get_node("Score").text = str(0)
+
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	OneHistory.record_direction(direction)
 	velocity = direction * speed * delta
 	move_and_slide()
-		
+	
+	# score
+	var score = int(global_position.x / 1000)
+	get_node("Score").text = str(score)
+	
+	# damages taken
 	var overlapping_bodies = %HitBox.get_overlapping_bodies()
 	var overlapping_enemies =  overlapping_bodies.filter(func(body): return body.has_method("take_damage"))
 	

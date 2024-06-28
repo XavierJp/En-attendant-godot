@@ -1,5 +1,11 @@
 extends Node2D
 
+func _input(ev):
+	if ev is InputEventKey :
+		if ev.keycode == KEY_ESCAPE:
+			get_tree().paused = true
+			get_node("Player/PauseScreen").set_visible(true)
+	
 
 
 func _ready():
@@ -29,3 +35,4 @@ func _on_timer_timeout():
 	print(%Timer.wait_time)
 	print(%Player.global_position.x)
 	spawn_mob()
+	

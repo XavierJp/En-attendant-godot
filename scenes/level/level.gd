@@ -15,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	var level = abs(%Player.global_position.x) / 5000 + 1
-	%Timer.wait_time = 3 / level
+	%SpawnMobTimer.wait_time = 3 / level
 
 func spawn_mob():
 	var new_mob = preload("res://scenes/enemies/enemy.tscn").instantiate()
@@ -32,7 +32,6 @@ func spawn_ghost(inputs: PackedVector2Array):
 	add_child(ghost)
 
 func _on_timer_timeout():
-	print(%Timer.wait_time)
-	print(%Player.global_position.x)
 	spawn_mob()
-	
+
+

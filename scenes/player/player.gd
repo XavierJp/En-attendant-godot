@@ -30,16 +30,7 @@ func _physics_process(delta):
 			get_tree().change_scene_to_file("res://scenes/UIs/game_over.tscn")
 
 
-
 func _on_bullet_timer_timeout():
 	var bullet = preload("res://scenes/Weapons/bullet.tscn")
 	var new_bullet = bullet.instantiate()
-	print(self)
-	print(self.position)
-	print($Sprite2D)
-	print($Sprite2D.position)
-	print($ProjectileStartPosition.global_position)
-	print(self.position - $ProjectileStartPosition.global_position)
-	new_bullet.global_position = $ProjectileStartPosition.global_position
-	print(new_bullet.global_position)
 	$ProjectileStartPosition.add_child(new_bullet)

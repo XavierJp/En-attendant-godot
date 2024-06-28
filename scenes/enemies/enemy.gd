@@ -6,8 +6,8 @@ var health = 50
 var player
 
 func _ready():
-	player = get_node("/root/Level/Player")
-
+	player = get_node("/root/Level/HumanPlayer")
+	
 func _process(delta: float):
 	move(delta)
 

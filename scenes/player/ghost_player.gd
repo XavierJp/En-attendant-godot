@@ -1,10 +1,10 @@
-extends CharacterBody2D
+extends PlayerShip
 class_name Ghost
 
-var speed = 60000
 var delta_index = 0
 var direction = Vector2(0, 0);
 var input_array = PackedVector2Array([])
+
 
 
 func _physics_process(delta):
@@ -21,7 +21,3 @@ func set_inputs(inputs: PackedVector2Array):
 	input_array = inputs;
 
 
-func _on_bullet_timer_timeout():
-	var bullet = preload("res://scenes/Weapons/bullet.tscn")
-	var new_bullet = bullet.instantiate()
-	$ProjectileStartPosition.add_child(new_bullet)

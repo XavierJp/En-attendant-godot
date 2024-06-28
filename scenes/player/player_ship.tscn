@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjq1a3fx722x3"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_8v1w1"]
-[ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_lkcqk"]
-[ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/shield_weapon.tscn" id="3_wm5qy"]
+[ext_resource type="Script" path="res://scenes/player/player_ship.gd" id="1_cdv7o"]
+[ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/shield_weapon.tscn" id="2_6ejrk"]
+[ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_xwkpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
 size = Vector2(52, 91)
@@ -10,17 +10,18 @@ size = Vector2(52, 91)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yk41"]
 size = Vector2(70, 100)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="PlayerShip" type="CharacterBody2D"]
 collision_mask = 53
-script = ExtResource("1_8v1w1")
+script = ExtResource("1_cdv7o")
 
-[node name="ShieldWeapon" parent="." instance=ExtResource("3_wm5qy")]
+[node name="ShieldWeapon" parent="." instance=ExtResource("2_6ejrk")]
+modulate = Color(0.231373, 1, 1, 0.662745)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(1.73974, 1.73974)
-texture = ExtResource("3_lkcqk")
+texture = ExtResource("3_xwkpq")
 
 [node name="ColisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
@@ -33,11 +34,11 @@ collision_mask = 53
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_7yk41")
 
+[node name="ProjectileStartPosition" type="Marker2D" parent="."]
+position = Vector2(26, 0)
+
 [node name="BulletTimer" type="Timer" parent="."]
 wait_time = 0.12
 autostart = true
-
-[node name="ProjectileStartPosition" type="Marker2D" parent="."]
-position = Vector2(26, 0)
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

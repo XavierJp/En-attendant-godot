@@ -1,8 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://81kv68i0jc75"]
+[gd_scene load_steps=6 format=3 uid="uid://d1fyhg1j0r0ms"]
 
-[ext_resource type="Script" path="res://scenes/player/ghost.gd" id="1_lawtr"]
 [ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/shield_weapon.tscn" id="2_055w0"]
 [ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_p46jd"]
+
+[sub_resource type="GDScript" id="GDScript_5xqxb"]
+script/source = "extends CharacterBody2D
+class_name Ghost
+
+var speed = 60000
+var delta_index = 0
+var direction = Vector2(0, 0);
+var input_array = PackedVector2Array([])
+
+
+func _physics_process(delta):
+	if delta_index >= input_array.size() :
+		print(\"Jean mich is dead \")
+		queue_free()
+		return
+	direction = input_array[delta_index]
+	delta_index+=1;
+	velocity = direction * speed * delta
+	move_and_slide()
+
+func set_inputs(inputs: PackedVector2Array):
+	input_array = inputs;
+
+
+func _on_bullet_timer_timeout():
+	var bullet = preload(\"res://scenes/Weapons/bullet.tscn\")
+	var new_bullet = bullet.instantiate()
+	$ProjectileStartPosition.add_child(new_bullet)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
 size = Vector2(52, 91)
@@ -13,7 +42,7 @@ size = Vector2(70, 100)
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 32
-script = ExtResource("1_lawtr")
+script = SubResource("GDScript_5xqxb")
 
 [node name="ShieldWeapon" parent="." instance=ExtResource("2_055w0")]
 scale = Vector2(2, 2)

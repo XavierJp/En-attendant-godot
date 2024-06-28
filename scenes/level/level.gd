@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $Player/Camera2D/PauseMenu
+@onready var pause_menu = $HumanPlayer/Camera2D/PauseMenu
 var paused = false
 
 func pause():
@@ -23,18 +23,18 @@ func _process(delta):
 		pause()
 	
 	# Score
-	var score = int(%Player.global_position.x / 1000)
-	$Player/Score.text = str(score)
+	var score = int(%HumanPlayer.global_position.x / 1000)
+	$HumanPlayer/Score.text = str(score)
 
 func spawn_enemy(new_enemy):
-	new_enemy.global_position = %Player.global_position 
-	new_enemy.global_position.x = %Player.global_position.x + randi_range(500, 1500)
+	new_enemy.global_position = %HumanPlayer.global_position 
+	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(500, 1500)
 	new_enemy.global_position.y =  randi_range(-1000, 1000)
 	add_child(new_enemy)
 
-const ghost_asset = preload("res://scenes/player/ghost.tscn")
+const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
 func spawn_ghost(inputs: PackedVector2Array):
-	var ghost: Ghost = ghost_asset.instantiate()
+	var ghost: Ghost = preload("res://scenes/player/ghost_player.tscn").instantiate()
 	ghost.set_inputs(inputs)
 	add_child(ghost)
 	
@@ -43,9 +43,9 @@ const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 
 func _on_spawn_small_ship_timer_timeout():
 	var new_enemy
-	var level = abs(%Player.global_position.x) / 5000 + 1
+	var level = abs(%HumanPlayer.global_position.x) / 5000 + 1
 	print(level)
-	var should_spaw_bigger_ship =  %Player.global_position.x > 100 and randi() % 20 == 0
+	var should_spaw_bigger_ship =  %HumanPlayer.global_position.x > 100 and randi() % 20 == 0
 	if (should_spaw_bigger_ship) :
 		new_enemy = big_ship_asset.instantiate()
 	else:

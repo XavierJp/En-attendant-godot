@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
-[ext_resource type="PackedScene" uid="uid://bjq1a3fx722x3" path="res://scenes/player/player.tscn" id="1_we2oi"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
+[ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
@@ -25,15 +25,15 @@ position = Vector2(0, 1000)
 [node name="Wall2" parent="." instance=ExtResource("2_xgegu")]
 position = Vector2(0, -1000)
 
-[node name="Player" parent="." instance=ExtResource("1_we2oi")]
+[node name="HumanPlayer" parent="." instance=ExtResource("3_nu3al")]
 unique_name_in_owner = true
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="HumanPlayer"]
 
-[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("4_o6erm")]
+[node name="PauseMenu" parent="HumanPlayer/Camera2D" instance=ExtResource("4_o6erm")]
 visible = false
 
-[node name="ProgressBar2" type="ProgressBar" parent="Player"]
+[node name="ProgressBar2" type="ProgressBar" parent="HumanPlayer"]
 unique_name_in_owner = true
 offset_left = -935.0
 offset_top = -514.0
@@ -46,7 +46,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 value = 100.0
 
-[node name="Score" type="Label" parent="Player"]
+[node name="Score" type="Label" parent="HumanPlayer"]
 offset_left = -933.0
 offset_top = -472.0
 offset_right = -778.0

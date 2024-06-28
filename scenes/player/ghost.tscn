@@ -32,3 +32,12 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_7yk41")
+
+[node name="ProjectileStartPosition" type="Marker2D" parent="."]
+position = Vector2(26, 0)
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

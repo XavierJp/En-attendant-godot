@@ -19,3 +19,9 @@ func _physics_process(delta):
 
 func set_inputs(inputs: PackedVector2Array):
 	input_array = inputs;
+
+
+func _on_bullet_timer_timeout():
+	var bullet = preload("res://scenes/Weapons/bullet.tscn")
+	var new_bullet = bullet.instantiate()
+	$ProjectileStartPosition.add_child(new_bullet)

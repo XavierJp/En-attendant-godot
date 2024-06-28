@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 300
+const speed = 30000
 var health = 30
 var player
 
@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	var distance = global_position.distance_to(player.global_position)
-	velocity = direction * speed * (3 if distance > 500 else 1)
+	velocity = direction * speed * (3 if distance > 500 else 1) * delta
 	move_and_slide()
 
 func take_damage(damage):

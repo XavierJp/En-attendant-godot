@@ -1,9 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce02pyvksfu80"]
+[gd_scene load_steps=17 format=3 uid="uid://ce02pyvksfu80"]
 
 [ext_resource type="Script" path="res://scenes/enemies/entity_enemy.gd" id="1_8oco8"]
 [ext_resource type="Texture2D" uid="uid://dsg5sxoqo5y1r" path="res://assets/enemies/spaceship2-1.png" id="2_6wlsj"]
 [ext_resource type="Texture2D" uid="uid://bgbgxva7x0p77" path="res://assets/enemies/spaceship2-2.png" id="3_p8rsl"]
 [ext_resource type="Texture2D" uid="uid://cvuq0p8fckmkq" path="res://assets/raw_sprites/UI/UI_kit.png" id="4_iqux7"]
+[ext_resource type="Texture2D" uid="uid://1u33u1xq78lv" path="res://assets/raw_sprites/Explosion/explosion1.png" id="5_wovsi"]
+[ext_resource type="Texture2D" uid="uid://dv7kadcouh8b4" path="res://assets/raw_sprites/Explosion/explosion2.png" id="6_l0hse"]
+[ext_resource type="Texture2D" uid="uid://ojjhrygyc55v" path="res://assets/raw_sprites/Explosion/explosion3.png" id="7_mn6qg"]
+[ext_resource type="Texture2D" uid="uid://diilej7vet28r" path="res://assets/raw_sprites/Explosion/explosion4.png" id="8_4larp"]
+[ext_resource type="Texture2D" uid="uid://bynss71joqgaq" path="res://assets/raw_sprites/Explosion/explosion5.png" id="9_perrl"]
+[ext_resource type="Texture2D" uid="uid://bun0s11u5tsb3" path="res://assets/raw_sprites/Explosion/explosion6.png" id="10_w5x8n"]
+[ext_resource type="Texture2D" uid="uid://b160xvjp55kn4" path="res://assets/raw_sprites/Explosion/explosion7.png" id="11_cnmfj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qy63"]
 animations = [{
@@ -930,6 +937,35 @@ texture = ExtResource("4_iqux7")
 [sub_resource type="TileSet" id="TileSet_twwhp"]
 sources/0 = SubResource("TileSetAtlasSource_utqlb")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nc60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wovsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l0hse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mn6qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4larp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_perrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w5x8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cnmfj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 13
@@ -973,3 +1009,10 @@ layer_0/tile_data = PackedInt32Array(65536, 2686976, 4, 131070, 2555904, 4, 1310
 tile_set = SubResource("TileSet_twwhp")
 format = 2
 layer_0/tile_data = PackedInt32Array(65536, 2490368, 5, 131070, 2359296, 5, 131071, 2424832, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8nc60")
+frame = 5
+frame_progress = 0.507893
+
+[connection signal="enemy_destroyed" from="." to="." method="_on_enemy_destroyed"]

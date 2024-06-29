@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=16 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
+[ext_resource type="Script" path="res://scenes/level/ExplosionSpawner.gd" id="3_8svbx"]
 [ext_resource type="PackedScene" uid="uid://cfa7s75uig7ix" path="res://scenes/spawner/asteroid_spawner.tscn" id="3_gsjhc"]
 [ext_resource type="PackedScene" uid="uid://0us03b4gylxm" path="res://scenes/spawner/ghost_spawner.tscn" id="3_kn20r"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
@@ -25,6 +26,9 @@ script = ExtResource("1_rhcvp")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(500, 2.08165e-12)
 script = ExtResource("3_sw05i")
+
+[node name="ExplosionSpawner" type="Node2D" parent="Camera2D"]
+script = ExtResource("3_8svbx")
 
 [node name="ShipSpawner" parent="Camera2D" instance=ExtResource("3_1luf1")]
 position = Vector2(1595, 0)
@@ -123,3 +127,5 @@ scroll_base_scale = Vector2(1, 1)
 
 [node name="OSTMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_f1kwd")
+
+[node name="DestructionSprites" type="Node2D" parent="."]

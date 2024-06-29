@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name EntityEnemy
 
+signal enemy_destroyed(position)
+
 var speed = 3000
 var health = 50
 var current_health = -1
@@ -39,6 +41,7 @@ func take_damage(damage):
 	if current_health == 0:
 		self.increase_ghost_gauge()
 		Store.kill_score += 1 
+		get_node("/root/Level/Camera2D/ExplosionSpawner").spawn_explosion(self.position+self.get_parent().position)
 		queue_free()
 
 func update_health_bar():
@@ -48,3 +51,7 @@ func update_health_bar():
 	$Health40.visible = float(current_health) / float(health) >= 0.4
 	$Health20.visible = float(current_health) / float(health) >= 0.2
 
+
+
+func _on_enemy_destroyed(position):
+	pass # Replace with function body.

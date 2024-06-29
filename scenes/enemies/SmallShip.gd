@@ -3,7 +3,7 @@ extends Enemy
 func _ready():
 	const speed = 100000
 	var health = 500
-	player = get_node("/root/Level/HumanPlayer")
+	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
 func move(delta: float):
 	var direction = global_position.direction_to(player.global_position)

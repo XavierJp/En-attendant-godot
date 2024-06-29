@@ -1,7 +1,7 @@
 extends PlayerShip
 	
 func _physics_process(delta):
-	var direction = Input.get_vector("0", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	Store.record_direction(direction)
 	velocity = direction * speed * delta
 	move_and_slide()
@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if overlapping_enemies.size() > 0:
 		health -= overlapping_enemies.size()
 		print(health)
-		get_node("VBoxContainer2/ProgressBar2").value = health
+		get_node("../VBoxContainer2/ProgressBar2").value = health
 		
 		if health <= 0:
 			Store.end_run()

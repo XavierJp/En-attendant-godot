@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $HumanPlayer/Camera2D/PauseMenu
+@onready var pause_menu = $Camera2D/PauseMenu
 var paused = false
 
 func pause():
@@ -23,8 +23,8 @@ func _process(delta):
 		pause()
 	
 	# Score
-	$HumanPlayer/VBoxContainer/ScoreLabel.text = Store.get_score()
-	$HumanPlayer/VBoxContainer2/NitroBar.value = Store.nitro_boost
+	$Camera2D/VBoxContainer/ScoreLabel.text = Store.get_score()
+	$Camera2D/VBoxContainer2/NitroBar.value = Store.nitro_boost
 	
 func spawn_enemy(new_enemy):
 	new_enemy.global_position = %HumanPlayer.global_position 
@@ -36,7 +36,7 @@ const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
 func spawn_ghost(inputs: PackedVector2Array):
 	var ghost: Ghost = preload("res://scenes/player/ghost_player.tscn").instantiate()
 	ghost.set_inputs(inputs)
-	add_child(ghost)
+	get_node("Camera2D").add_child(ghost)
 	
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")

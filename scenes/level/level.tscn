@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=10 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
+[ext_resource type="Script" path="res://scenes/level/Camera2D.gd" id="3_sw05i"]
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
@@ -25,22 +26,20 @@ position = Vector2(0, 1000)
 [node name="Wall2" parent="." instance=ExtResource("2_xgegu")]
 position = Vector2(0, -1000)
 
-[node name="HumanPlayer" parent="." instance=ExtResource("3_nu3al")]
-unique_name_in_owner = true
-
-[node name="Camera2D" type="Camera2D" parent="HumanPlayer"]
+[node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(500, 2.08165e-12)
+script = ExtResource("3_sw05i")
 
-[node name="PauseMenu" parent="HumanPlayer/Camera2D" instance=ExtResource("4_o6erm")]
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_o6erm")]
 visible = false
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HumanPlayer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D"]
 offset_left = -400.0
 offset_top = -496.0
 offset_right = -117.0
 offset_bottom = -436.0
 
-[node name="ProgressBar2" type="ProgressBar" parent="HumanPlayer/VBoxContainer2"]
+[node name="ProgressBar2" type="ProgressBar" parent="Camera2D/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 20)
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
@@ -50,7 +49,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 value = 100.0
 
-[node name="NitroBar" type="ProgressBar" parent="HumanPlayer/VBoxContainer2"]
+[node name="NitroBar" type="ProgressBar" parent="Camera2D/VBoxContainer2"]
 custom_minimum_size = Vector2(2.08165e-12, 20)
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
@@ -61,17 +60,20 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 max_value = 1000.0
 show_percentage = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HumanPlayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D"]
 offset_left = -400.0
 offset_top = -432.0
 offset_right = -355.0
 offset_bottom = -372.0
 
-[node name="ScoreLabel" type="Label" parent="HumanPlayer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Camera2D/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
 theme_override_font_sizes/font_size = 60
 text = "0"
+
+[node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
+unique_name_in_owner = true
 
 [node name="SpawnSmallShipTimer" type="Timer" parent="."]
 wait_time = 3.0

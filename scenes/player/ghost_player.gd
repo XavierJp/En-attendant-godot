@@ -6,7 +6,6 @@ var direction = Vector2(0, 0);
 var input_array = PackedVector2Array([])
 
 
-
 func _physics_process(delta):
 	if delta_index >= input_array.size() :
 		print("Jean mich is dead ")

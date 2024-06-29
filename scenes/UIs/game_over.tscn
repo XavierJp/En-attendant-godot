@@ -1,9 +1,10 @@
-[gd_scene load_steps=632 format=3 uid="uid://xwpxg8qp8tpl"]
+[gd_scene load_steps=633 format=3 uid="uid://xwpxg8qp8tpl"]
 
 [ext_resource type="Script" path="res://scenes/UIs/game_over.gd" id="1_i0rkl"]
 [ext_resource type="Texture2D" uid="uid://d3eb2esa40113" path="res://assets/background/black_hole.png" id="2_3v8bf"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="2_5cs5l"]
 [ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="4_xtjt2"]
+[ext_resource type="AudioStream" uid="uid://b5a2m7i6wap4r" path="res://assets/audio/UI/Minimalist1.mp3" id="5_l1c1h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agdnb"]
 atlas = ExtResource("2_3v8bf")
@@ -4476,5 +4477,10 @@ text = "Quit
 scroll_base_offset = Vector2(0, 2150)
 scroll_base_scale = Vector2(1, 1)
 
+[node name="HoverButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l1c1h")
+
+[connection signal="mouse_entered" from="ColorRect3/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect3/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="ColorRect3/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect3/QuitButton" to="." method="_on_quit_button_pressed"]

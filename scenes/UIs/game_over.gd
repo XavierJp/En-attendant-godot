@@ -10,3 +10,11 @@ func _on_quit_button_pressed():
 	
 func _ready():
 	description.text += "\n\nSCORE : " + Store.get_score()
+
+
+func _on_button_mouse_entered():
+	$HoverButtonSound.play()
+
+
+func _on_quit_button_mouse_entered():
+	$HoverButtonSound.play()

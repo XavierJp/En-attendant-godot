@@ -1,46 +1,36 @@
-[gd_scene load_steps=9 format=3 uid="uid://cot1q6540hllf"]
+[gd_scene load_steps=5 format=3 uid="uid://cot1q6540hllf"]
 
 [ext_resource type="Script" path="res://scenes/Weapons/Zone/shield_weapon.gd" id="1_uxpq1"]
-[ext_resource type="Texture2D" uid="uid://dfffkfpi8wof7" path="res://assets/shield/All_Fire_Bullet_Pixel_16x16_06 copie.png" id="2_ajr2j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_edo7k"]
-atlas = ExtResource("2_ajr2j")
-region = Rect2(1, 0, 32, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6bqcs"]
-atlas = ExtResource("2_ajr2j")
-region = Rect2(33, 0, 32, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2fdwd"]
-atlas = ExtResource("2_ajr2j")
-region = Rect2(65, 0, 32, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hqpu"]
-atlas = ExtResource("2_ajr2j")
-region = Rect2(97, 0, 32, 30)
+[ext_resource type="Texture2D" uid="uid://dfj2w7gv3b8jj" path="res://assets/shield/shield.png" id="2_0amis"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aciwv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_edo7k")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6bqcs")
+"texture": ExtResource("2_0amis")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2fdwd")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8hqpu")
+"texture": ExtResource("2_0amis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0amis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0amis")
 }],
 "loop": true,
 "name": &"default",
-"speed": 11.0
+"speed": 4.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ocab"]
-radius = 49.5177
+radius = 84.006
 
 [node name="ShieldWeapon" type="Area2D"]
 collision_layer = 8
@@ -48,11 +38,12 @@ collision_mask = 4
 script = ExtResource("1_uxpq1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.729412)
 position = Vector2(0, -4)
-scale = Vector2(3.6, 3.6)
+scale = Vector2(5.3125, 5.3125)
 sprite_frames = SubResource("SpriteFrames_aciwv")
 autoplay = "default"
-frame_progress = 0.0600502
+frame_progress = 0.770045
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ocab")

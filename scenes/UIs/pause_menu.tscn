@@ -39,3 +39,13 @@ theme_override_font_sizes/font_size = 40
 text = "Press ESC to resume"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Label"]
+offset_left = -150.0
+offset_top = 228.0
+offset_right = 430.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 40
+text = "Press X to quit"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -18,7 +18,7 @@ func move_towards_player(delta:float):
 	var direction = global_position.direction_to(player.global_position)
 	var distance = global_position.distance_to(player.global_position)
 	
-	var multiplier = 1 + (500 if is_nan(distance) else distance) / 500
+	var multiplier = 1 + distance / 500
 	velocity = direction * speed * multiplier * delta
 	
 	rotation = direction.angle()

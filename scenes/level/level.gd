@@ -25,18 +25,21 @@ func _process(delta):
 	# Check for pause
 	if Input.is_action_just_pressed("pause"):
 		pause()
+		
+	if paused and Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 	
 	# Score
 	$Camera2D/VBoxContainer/ScoreLabel.text = Store.get_score()
 	$Camera2D/VBoxContainer2/NitroBar.value = Store.nitro_boost
 	
 func spawn_enemy(new_enemy):
-	new_enemy.global_position = %HumanPlayer.global_position 
-	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(500, 1500)
-	new_enemy.global_position.y =  randi_range(-1000, 1000)
-	add_child(new_enemy)
+	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(1, 3)
+	new_enemy.global_position.y = %HumanPlayer.global_position.y + randi_range(1, 3)
+	get_node('Camera2D').add_child(new_enemy)
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
+
 func spawn_ghost(inputs: PackedVector2Array):
 	var ghost: Ghost = preload("res://scenes/player/ghost_player.tscn").instantiate()
 	ghost.set_inputs(inputs)

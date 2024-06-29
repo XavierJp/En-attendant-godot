@@ -4,8 +4,8 @@ func loot_nitro_on_death():
 	Store.add_nitro_boost(10)
 
 func _ready():
-	const speed = 100000
-	var health = 1000
+	speed = 800
+	health = 1000
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
 func move(delta: float):

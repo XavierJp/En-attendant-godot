@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Store="*res://scenes/player/store.gd"
-Inventory="*res://scenes/player/inventory.gd"
 
 [display]
 

@@ -1,7 +1,8 @@
-extends EntityProjectileWeapon
+class_name Gun extends EntityProjectileWeapon
 
 var angles = [-100, -50, 0, 50, 100]
 var damage = 100
+
 
 func _on_bullet_timer_timeout():
 	var bullet = preload("res://scenes/Weapons/Projectile/bullet.tscn")

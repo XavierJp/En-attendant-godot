@@ -11,6 +11,8 @@ var current_run = PackedVector2Array([])
 var page = 0
 var kill_score = 0
 var position_score = 0
+var weapons = [preload("res://scenes/Weapons/Projectile/Gun/gun.tscn").instantiate()]
+
 
 func start_new_run():
 	kill_score = 0

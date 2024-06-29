@@ -1,17 +1,17 @@
-extends Node
+class_name Inventory extends Node
 
+var weapons = []
 
-func projectile_weapon():
+func instantiate_projectile_weapon():
 	var gun = preload("res://scenes/Weapons/Projectile/Gun/gun.tscn")
 	return gun.instantiate()
 	
-func shield_weapon():
+func instantiate_shield_weapon():
 	var shield = preload("res://scenes/Weapons/Zone/shield_weapon.tscn")
 	return shield.instantiate()
 
-func get_weapons():
-	var weapons = []	
-	weapons.append(projectile_weapon())
-	weapons.append(shield_weapon())
+func create_weapons():
+	weapons.append(instantiate_projectile_weapon())
+	weapons.append(instantiate_shield_weapon())
 	return weapons
 

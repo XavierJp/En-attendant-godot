@@ -19,6 +19,9 @@ func pause():
 
 func _ready():
 	player.global_position.y = randi_range(-1000, 1000)
+	player.inventory.weapons = Store.weapons
+	for weapon in player.inventory.weapons:
+		player.add_child(weapon)
 	Store.start_new_run()
 	ost_music.play()
 	

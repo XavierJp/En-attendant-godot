@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=13 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
+[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
+[ext_resource type="Texture2D" uid="uid://8akxsfhy0od1" path="res://assets/background/Parallax/Backgrounds/Red1.png" id="7_tq6fg"]
+[ext_resource type="Texture2D" uid="uid://bie7ud3bxvq1d" path="res://assets/background/Parallax/Backgrounds/YellowStars.png" id="8_a7qgh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)
@@ -95,5 +98,24 @@ visible = false
 [node name="SpawnSmallShipTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/NebulaParallax"]
+texture = ExtResource("7_tq6fg")
+
+[node name="StarParallax" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/StarParallax"]
+texture = ExtResource("8_a7qgh")
+
+[node name="SpaceParallaxBackground" parent="." instance=ExtResource("7_b1c0c")]
 
 [connection signal="timeout" from="SpawnSmallShipTimer" to="." method="_on_spawn_small_ship_timer_timeout"]

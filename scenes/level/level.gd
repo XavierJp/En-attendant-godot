@@ -28,9 +28,6 @@ func _process(delta):
 	# Check for pause
 	if Input.is_action_just_pressed("pause"):
 		pause()
-		
-	if paused and Input.is_action_just_pressed("quit"):
-		get_tree().quit()
 	
 	# Score
 	$Camera2D/VBoxContainer/ScoreLabel.text = Store.get_score()
@@ -45,7 +42,6 @@ func spawn_enemy(new_enemy):
 	%HumanPlayer.add_sibling(new_enemy)
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
-
 func spawn_ghost(inputs: PackedVector2Array):
 	var ghost: Ghost = preload("res://scenes/player/ghost_player.tscn").instantiate()
 	ghost.set_inputs(inputs)

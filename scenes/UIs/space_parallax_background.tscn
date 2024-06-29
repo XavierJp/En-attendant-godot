@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj8bkjl3vlpma"]
+
+[ext_resource type="Texture2D" uid="uid://8akxsfhy0od1" path="res://assets/background/Parallax/Backgrounds/Red1.png" id="1_idlkb"]
+[ext_resource type="Texture2D" uid="uid://bie7ud3bxvq1d" path="res://assets/background/Parallax/Backgrounds/YellowStars.png" id="2_dvukr"]
+
+[node name="SpaceParallaxBackground" type="ParallaxBackground"]
+
+[node name="NebulaParallaxLeft2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="NebulaParallaxLeft2"]
+texture = ExtResource("1_idlkb")
+centered = false
+
+[node name="NebulaParallaxLeft" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="NebulaParallaxLeft"]
+position = Vector2(0, 1080)
+texture = ExtResource("1_idlkb")
+centered = false
+
+[node name="NebulaParallaxRight2" type="ParallaxLayer" parent="."]
+position = Vector2(960, 0)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="NebulaParallaxRight2"]
+texture = ExtResource("1_idlkb")
+centered = false
+
+[node name="NebulaParallaxRight" type="ParallaxLayer" parent="."]
+position = Vector2(960, 0)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="NebulaParallaxRight"]
+position = Vector2(0, 1080)
+texture = ExtResource("1_idlkb")
+centered = false
+
+[node name="StarParallaxLeft" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarParallaxLeft"]
+texture = ExtResource("2_dvukr")
+centered = false
+
+[node name="StarParallaxLeft2" type="ParallaxLayer" parent="."]
+position = Vector2(0, 1080)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarParallaxLeft2"]
+texture = ExtResource("2_dvukr")
+centered = false
+
+[node name="StarParallaxRight" type="ParallaxLayer" parent="."]
+position = Vector2(960, 0)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarParallaxRight"]
+texture = ExtResource("2_dvukr")
+centered = false
+
+[node name="StarParallaxRight2" type="ParallaxLayer" parent="."]
+position = Vector2(960, 1080)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarParallaxRight2"]
+texture = ExtResource("2_dvukr")
+centered = false

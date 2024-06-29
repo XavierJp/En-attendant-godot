@@ -23,7 +23,7 @@ func _ready():
 	linear_velocity=Vector2(0,0)
 	angular_velocity = randf_range(0.0, max_speed)
 	initial_move_angle = randf_range(-PI/4 , PI/4)	
-	var direction = Vector2.LEFT.rotated(initial_move_angle)*mass*400
+	var direction = Vector2.LEFT.rotated(initial_move_angle)*100
 	linear_velocity = direction
 	
 	match size:

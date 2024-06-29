@@ -8,10 +8,9 @@ var ghost_run = PackedVector2Array([])
 var ghost_score = 0
 
 var current_run = PackedVector2Array([])
-var page = 0
 var kill_score = 0
 var position_score = 0
-var weapons = [preload("res://scenes/Weapons/Projectile/Gun/gun.tscn").instantiate()]
+var weapons = [preload("res://scenes/Weapons/Projectile/Gun/gun.tscn").instantiate(),preload("res://scenes/Weapons/Zone/shield_weapon.tscn").instantiate()]
 
 
 func start_new_run():
@@ -27,10 +26,11 @@ func has_ghost():
 	return ghost_run.size() >0
 	
 func end_run():
-	page += 1;
 	if(position_score > ghost_score):
 		ghost_run = current_run;
 	current_run = PackedVector2Array([])
+	print("loser")
+
 
 func record_direction(direction: Vector2):
 	current_run.append(direction)
@@ -40,3 +40,5 @@ func increase_ghost_gauge(boost):
 	
 	if(ghost_gauge<max_ghost_gauge):
 		ghost_gauge = min(ghost_gauge + (boost / ghost_factor), max_ghost_gauge)
+
+		

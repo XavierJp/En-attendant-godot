@@ -140,3 +140,8 @@ scroll_base_scale = Vector2(1, 1)
 
 [node name="OSTMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_f1kwd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

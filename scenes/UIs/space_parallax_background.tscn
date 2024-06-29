@@ -27,3 +27,17 @@ texture = ExtResource("2_dvukr")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 9600, 5400)
+
+[node name="PlanetParallax" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlanetParallax"]
+visible = false
+texture_repeat = 2
+texture = ExtResource("2_dvukr")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 9600, 5400)
+
+[node name="Sprite2D2" type="Sprite2D" parent="PlanetParallax"]

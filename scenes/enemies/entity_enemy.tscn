@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce02pyvksfu80"]
+[gd_scene load_steps=8 format=3 uid="uid://ce02pyvksfu80"]
 
 [ext_resource type="Script" path="res://scenes/enemies/entity_enemy.gd" id="1_8oco8"]
 [ext_resource type="Texture2D" uid="uid://dsg5sxoqo5y1r" path="res://assets/enemies/spaceship2-1.png" id="2_6wlsj"]
 [ext_resource type="Texture2D" uid="uid://bgbgxva7x0p77" path="res://assets/enemies/spaceship2-2.png" id="3_p8rsl"]
-[ext_resource type="Texture2D" uid="uid://bdsjuy1emdydq" path="res://assets/ui/load_bar/empty.png" id="4_p3cy1"]
-[ext_resource type="Texture2D" uid="uid://ch7oycpylsc1d" path="res://assets/ui/load_bar/cadre.png" id="5_obv3g"]
-[ext_resource type="Texture2D" uid="uid://dkebslfdystif" path="res://assets/ui/load_bar/inner.png" id="6_e5c7s"]
+[ext_resource type="Texture2D" uid="uid://ch5kxlt7a4uju" path="res://assets/ui/health_bar/background.png" id="4_h8ube"]
+[ext_resource type="Texture2D" uid="uid://bhmsip7lutclq" path="res://assets/ui/health_bar/inner.png" id="5_8t2nd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qy63"]
 animations = [{
@@ -39,15 +38,17 @@ frame_progress = 0.156034
 shape = SubResource("RectangleShape2D_7uogu")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
-custom_minimum_size = Vector2(50, 10)
-offset_left = -25.0
-offset_top = -30.0
-offset_right = 25.0
-offset_bottom = 10.0
+custom_minimum_size = Vector2(50, 20)
+offset_left = 55.0
+offset_top = 24.0
+offset_right = 105.0
+offset_bottom = 64.0
+rotation = -4.71238
+scale = Vector2(0.8, 0.192001)
 value = 100.0
-texture_under = ExtResource("4_p3cy1")
-texture_over = ExtResource("5_obv3g")
-texture_progress = ExtResource("6_e5c7s")
-texture_progress_offset = Vector2(3, 3)
+nine_patch_stretch = true
+texture_under = ExtResource("4_h8ube")
+texture_progress = ExtResource("5_8t2nd")
+texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [connection signal="enemy_destroyed" from="." to="." method="_on_enemy_destroyed"]

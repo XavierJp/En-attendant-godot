@@ -25,8 +25,6 @@ func move_towards_player(delta:float):
 	velocity = direction * speed * multiplier * delta
 	
 	rotation = direction.angle()
-	
-	$HealthBar.rotation = - direction.angle()
 	move_and_slide()
 
 func move(delta: float):

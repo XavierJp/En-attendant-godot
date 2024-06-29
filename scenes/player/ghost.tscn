@@ -5,7 +5,6 @@
 
 [sub_resource type="GDScript" id="GDScript_5xqxb"]
 script/source = "extends CharacterBody2D
-class_name Ghost
 
 var speed = 60000
 var delta_index = 0

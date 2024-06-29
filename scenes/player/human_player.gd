@@ -2,12 +2,15 @@ extends PlayerShip
 
 func _ready():
 	get_node("Score").text = str(0)
+
 	
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	OneHistory.record_direction(direction)
 	velocity = direction * speed * delta
 	move_and_slide()
+
+	OneHistory.position_score = max(global_position.x / 1000,OneHistory.position_score )
 	
 	# damages taken
 	var overlapping_bodies = %HitBox.get_overlapping_bodies()

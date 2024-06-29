@@ -17,6 +17,7 @@ func move(delta: float):
 func take_damage(damage):
 	health -= damage
 	if health <= 0:
+		OneHistory.kill_score += 1 
 		queue_free()
 
 

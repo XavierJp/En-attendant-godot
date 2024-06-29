@@ -3,7 +3,7 @@ class_name EntityEnemy
 
 var speed = 3000
 var health = 50
-var max_health = 50
+var current_health = -1
 var player
 
 func increase_ghost_gauge():
@@ -30,18 +30,20 @@ func move(delta: float):
 	move_towards_player(delta)
 	
 func take_damage(damage):
-	health -= damage
+	# init on first damage
+	if(current_health == -1):
+		current_health = health
+	current_health = max(0, current_health -damage)
 	update_health_bar()
-	if health <= 0:
+	if current_health == 0:
 		self.increase_ghost_gauge()
 		Store.kill_score += 1 
 		queue_free()
 
 func update_health_bar():
-	$Health100.visible = float(health) / float(max_health) >= 1
-	$Health80.visible = float(health) / float(max_health) >= 0.8
-	$Health60.visible = float(health) / float(max_health) >= 0.6
-	$Health40.visible = float(health) / float(max_health) >= 0.4
-	$Health20.visible = float(health) / float(max_health) >= 0.2
-	
+	$Health100.visible = float(current_health) / float(health) >= 1
+	$Health80.visible = float(current_health) / float(health) >= 0.8
+	$Health60.visible = float(current_health) / float(health) >= 0.6
+	$Health40.visible = float(current_health) / float(health) >= 0.4
+	$Health20.visible = float(current_health) / float(health) >= 0.2
 

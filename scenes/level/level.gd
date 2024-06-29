@@ -5,6 +5,7 @@ extends Node2D
 @onready var player: HumanPlayer = $Camera2D/HumanPlayer
 @onready var ost_music: AudioStreamPlayer = $OSTMusic
 @onready var pause_menu = $Camera2D/PauseMenu
+@onready var ghost_gauge_bar = $Camera2D/GhostGauge/GhostGaugeBar
 
 var paused = false
 
@@ -28,8 +29,5 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pause()
 	
-	# Score
-	$Camera2D/VBoxContainer/ScoreLabel.text = "Score : "+Store.get_score()
-	$Camera2D/GhostGauge/GhostGaugeBar.value = Store.ghost_gauge
-	
-	score_label.text = Store.get_score()
+	ghost_gauge_bar.value = Store.ghost_gauge
+	score_label.text = "Score : "+Store.get_score()

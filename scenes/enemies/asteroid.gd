@@ -38,7 +38,6 @@ func _ready():
 			mass *= 4
 			sprite.scale *=4
 			cshape.scale *=4
-	print("Asteroid ", "(size: ", size, ")", "(position: ", position, ")")
 
 #
 #

@@ -30,9 +30,7 @@ func update_timer():
 #
 
 func spawn_asteroid(asteroid: Asteroid):
-	print("spawn_asteroid", asteroid, asteroid.size)
 	asteroid.exploded.connect(func on_exploded(size: Asteroid.AsteroidSize, pos: Vector2) -> void: 
-		print("exploded", size, pos)
 		match size:
 			Asteroid.AsteroidSize.MEDIUM:
 				spawn_asteroid(

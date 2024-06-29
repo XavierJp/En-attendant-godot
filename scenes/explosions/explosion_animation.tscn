@@ -41,6 +41,6 @@ animations = [{
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.58, 2.58)
+scale = Vector2(2.28, 2.28)
 sprite_frames = SubResource("SpriteFrames_s262i")
 autoplay = "default"

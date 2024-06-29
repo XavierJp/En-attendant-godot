@@ -26,7 +26,7 @@ func has_ghost():
 	
 func end_run():
 	page += 1;
-	if(get_score()>ghost_score):
+	if(position_score > ghost_score):
 		ghost_run = current_run;
 	current_run = PackedVector2Array([])
 

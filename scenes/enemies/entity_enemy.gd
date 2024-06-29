@@ -25,6 +25,8 @@ func move_towards_player(delta:float):
 	velocity = direction * speed * multiplier * delta
 	
 	rotation = direction.angle()
+	
+	$HealthBar.rotation = - direction.angle()
 	move_and_slide()
 
 func move(delta: float):
@@ -45,11 +47,7 @@ func take_damage(damage):
 		queue_free()
 
 func update_health_bar():
-	$Health100.visible = float(current_health) / float(health) >= 1
-	$Health80.visible = float(current_health) / float(health) >= 0.8
-	$Health60.visible = float(current_health) / float(health) >= 0.6
-	$Health40.visible = float(current_health) / float(health) >= 0.4
-	$Health20.visible = float(current_health) / float(health) >= 0.2
+	$HealthBar.value = float(current_health) / float(health)*100
 
 
 

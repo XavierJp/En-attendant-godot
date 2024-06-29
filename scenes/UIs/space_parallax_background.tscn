@@ -152,3 +152,15 @@ libraries = {
 "": SubResource("AnimationLibrary_ei0pq")
 }
 autoplay = "lava_planet"
+
+[node name="CoverParallax" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(9600, 5400)
+
+[node name="Sprite2D" type="Sprite2D" parent="CoverParallax"]
+modulate = Color(0, 0, 0, 0.341176)
+texture_repeat = 2
+texture = ExtResource("1_nap4q")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 9600, 5400)

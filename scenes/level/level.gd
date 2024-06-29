@@ -5,6 +5,7 @@ extends Node2D
 @onready var pause_menu = $Camera2D/PauseMenu
 
 var paused = false
+var initial_ship_timer = 1
 
 func pause():
 	if paused:
@@ -20,6 +21,8 @@ func _ready():
 	Store.start_new_run()
 	for inputs in Store.All_runs :
 		spawn_ghost(inputs)
+		
+	$SpawnSmallShipTimer.wait_time = initial_ship_timer
 
 func _process(delta):
 	# Check for pause
@@ -33,9 +36,12 @@ func _process(delta):
 	$Camera2D/VBoxContainer/ScoreLabel.text = Store.get_score()
 	$Camera2D/VBoxContainer2/NitroBar.value = Store.nitro_boost
 	
+	# increase enemy spawn
+	$SpawnSmallShipTimer.wait_time = initial_ship_timer / (Store.position_score + 1) 
+	
 func spawn_enemy(new_enemy):
-	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(1, 3)
-	new_enemy.global_position.y = %HumanPlayer.global_position.y + randi_range(1, 3)
+	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(0, 10)
+	new_enemy.global_position.y = %HumanPlayer.global_position.y + randi_range(-1000, 1000)
 	get_node('Camera2D').add_child(new_enemy)
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
@@ -50,12 +56,10 @@ const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 
 func _on_spawn_small_ship_timer_timeout():
 	var new_enemy
-	var level = abs(%HumanPlayer.global_position.x) / 5000 + 1
 	var should_spaw_bigger_ship =  %HumanPlayer.global_position.x > 100 and randi() % 20 == 0
 	if (should_spaw_bigger_ship) :
 		new_enemy = big_ship_asset.instantiate()
 	else:
 		new_enemy = small_ship_asset.instantiate()
-	
+
 	spawn_enemy(new_enemy)
-	$SpawnSmallShipTimer.wait_time = 3 / level

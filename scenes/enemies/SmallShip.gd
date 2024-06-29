@@ -1,8 +1,8 @@
 extends Enemy
 
 func _ready():
-	speed = 6000
-	health = 500
+	speed = 5000
+	health = 200
 	
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 

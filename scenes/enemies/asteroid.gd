@@ -2,7 +2,7 @@ class_name Asteroid extends RigidBody2D
 
 enum AsteroidSize {SMALL, MEDIUM, LARGE}
 
-signal exploded(pos: Vector2, new_rotation: float, size: Asteroid.AsteroidSize, points: int)
+signal exploded(size: Asteroid.AsteroidSize, pos: Vector2,  points: int)
 
 const BASE_SPEED: float = 5.0
 
@@ -25,9 +25,9 @@ func _process(delta: float) -> void:
 
 func _ready():
 	freeze = true
-	size = AsteroidSize.values().pick_random()
 	initial_move_angle = randf_range(0.0, 1.0)
 	angular_velocity = randf_range(0.0, max_speed)
+	rotation = initial_move_angle
 	
 	match size:
 		AsteroidSize.MEDIUM:
@@ -38,10 +38,12 @@ func _ready():
 			mass *= 4
 			sprite.scale *=4
 			cshape.scale *=4
+	print("Asteroid ", "(size: ", size, ")", "(position: ", position, ")")
 
 #
 #
 #
 
 func take_damage(damage: int) -> void:
+	exploded.emit(size, position)
 	queue_free()

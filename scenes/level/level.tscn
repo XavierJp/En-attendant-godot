@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=11 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
+size = Vector2(417, 1009)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk0k"]
 bg_color = Color(0.321569, 0.00784314, 0.0509804, 1)
@@ -30,8 +33,17 @@ position = Vector2(0, -1000)
 offset = Vector2(500, 2.08165e-12)
 script = ExtResource("3_sw05i")
 
-[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_o6erm")]
-visible = false
+[node name="CameraWall" type="StaticBody2D" parent="Camera2D"]
+collision_layer = 32
+collision_mask = 63
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CameraWall"]
+position = Vector2(1582, -10)
+shape = SubResource("RectangleShape2D_ybcw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraWall"]
+position = Vector2(-605, -5)
+shape = SubResource("RectangleShape2D_ybcw4")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D"]
 offset_left = -400.0
@@ -74,6 +86,9 @@ text = "0"
 
 [node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
 unique_name_in_owner = true
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_o6erm")]
+visible = false
 
 [node name="SpawnSmallShipTimer" type="Timer" parent="."]
 wait_time = 3.0

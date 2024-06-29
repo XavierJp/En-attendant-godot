@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var player = $Camera2D/HumanPlayer
+
 @onready var pause_menu = $Camera2D/PauseMenu
+
 var paused = false
 
 func pause():
@@ -13,6 +16,7 @@ func pause():
 	paused = !paused
 
 func _ready():
+	player.global_position.y = randi_range(-1000, 1000)
 	Store.start_new_run()
 	for inputs in Store.All_runs :
 		spawn_ghost(inputs)

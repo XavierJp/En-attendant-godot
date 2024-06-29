@@ -13,10 +13,9 @@ func pause():
 	paused = !paused
 
 func _ready():
-	print("The one and only history has ", OneHistory.Bible.size(), " chapiters.")
-	OneHistory.kill_score = 0
-	OneHistory.position_score = 0
-	for inputs in OneHistory.Bible :
+	Store.kill_score = 0
+	Store.position_score = 0
+	for inputs in Store.All_runs :
 		spawn_ghost(inputs)
 
 func _process(delta):
@@ -25,7 +24,7 @@ func _process(delta):
 		pause()
 	
 	# Score
-	$HumanPlayer/Score.text = OneHistory.get_score()
+	$HumanPlayer/Score.text = Store.get_score()
 
 func spawn_enemy(new_enemy):
 	new_enemy.global_position = %HumanPlayer.global_position 

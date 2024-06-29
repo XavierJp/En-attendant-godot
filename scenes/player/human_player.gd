@@ -2,15 +2,14 @@ extends PlayerShip
 
 func _ready():
 	get_node("Score").text = str(0)
-
 	
 func _physics_process(delta):
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	OneHistory.record_direction(direction)
+	var direction = Input.get_vector("0", "ui_right", "ui_up", "ui_down")
+	Store.record_direction(direction)
 	velocity = direction * speed * delta
 	move_and_slide()
 
-	OneHistory.position_score = max(global_position.x / 1000,OneHistory.position_score )
+	Store.position_score = max(global_position.x / 1000,Store.position_score )
 	
 	# damages taken
 	var overlapping_bodies = %HitBox.get_overlapping_bodies()
@@ -21,5 +20,5 @@ func _physics_process(delta):
 		get_node('ProgressBar2').value = health
 		
 		if health <= 0:
-			OneHistory.end_of_chapiter()
+			Store.end_run()
 			get_tree().change_scene_to_file("res://scenes/UIs/game_over.tscn")

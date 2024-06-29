@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-OneHistory="*res://scenes/player/one_history.gd"
+Store="*res://scenes/player/store.gd"
 
 [display]
 

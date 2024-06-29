@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=19 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scenes/level/GhostGauge.gd" id="9_r03ci"]
 [ext_resource type="Texture2D" uid="uid://hvb41l1pb0m7" path="res://assets/ui/load_bar/inner2.png" id="9_xxsx0"]
 [ext_resource type="AudioStream" uid="uid://cvnbw12fc52q0" path="res://assets/audio/musics/kendal-giallo-inferno.mp3" id="11_f1kwd"]
+[ext_resource type="Script" path="res://scenes/level/timer_label.gd" id="14_0thkt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)
@@ -106,11 +107,23 @@ text = "Ghost is available !
 (press C)"
 horizontal_alignment = 1
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Camera2D"]
+offset_left = -370.0
+offset_top = 384.0
+offset_bottom = 444.0
+
+[node name="TimerLabel" type="Label" parent="Camera2D/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_xxbw1")
+theme_override_font_sizes/font_size = 60
+text = "Time  : 0"
+script = ExtResource("14_0thkt")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D"]
 offset_left = -370.0
-offset_top = 393.0
+offset_top = 325.0
 offset_right = -1.0
-offset_bottom = 453.0
+offset_bottom = 385.0
 
 [node name="ScoreLabel" type="Label" parent="Camera2D/VBoxContainer"]
 layout_mode = 2

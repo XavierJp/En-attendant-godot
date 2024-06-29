@@ -18,16 +18,13 @@ var initial_move_angle: float = 0.0
 #
 #
 
-func _process(delta: float) -> void:
-	if freeze:
-		freeze = false
-		apply_central_impulse(randf_range(max_speed * 0.6, max_speed) * Vector2.UP.rotated(initial_move_angle))	
 
 func _ready():
-	freeze = true
-	initial_move_angle = randf_range(0.0, 1.0)
+	linear_velocity=Vector2(0,0)
 	angular_velocity = randf_range(0.0, max_speed)
-	rotation = initial_move_angle
+	initial_move_angle = randf_range(-PI/4 , PI/4)	
+	var direction = Vector2.LEFT.rotated(initial_move_angle)*mass*400
+	linear_velocity = direction
 	
 	match size:
 		AsteroidSize.MEDIUM:

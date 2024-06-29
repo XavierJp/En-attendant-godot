@@ -10,11 +10,11 @@ const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
 #
 
 func _ready():
-	initial_timer = 4
+	initial_timer = 1
 
 func _on_timer_timeout():
 	var asteroid = asteroid_asset.instantiate()
-	asteroid.position.y = randi_range(-1000, 1000)
+	asteroid.position.y = randi_range(-500, 500)
 	asteroid.size = Asteroid.AsteroidSize.values().pick_random()
 	spawn_asteroid(asteroid)
 
@@ -59,12 +59,11 @@ func spawn_asteroid(asteroid: Asteroid):
 					)
 				)
 	)
+	
 	self.add_child(asteroid)
 
 func create_asteroid(size: Asteroid.AsteroidSize, pos: Vector2) -> Asteroid:
 	var asteroid = asteroid_asset.instantiate()
-	var rotation_offset = randf_range(PI / 8, PI / 4)
 	asteroid.position = pos
-	asteroid.initial_move_angle = rotation_offset
 	asteroid.size = size
 	return asteroid

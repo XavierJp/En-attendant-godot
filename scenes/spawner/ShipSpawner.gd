@@ -16,7 +16,7 @@ func spawn_enemy(new_enemy):
 
 func _on_timer_timeout():
 	var should_spaw_bigger_ship =  Store.position_score > 15 and randi() % 20 == 0
-
+	
 	if (should_spaw_bigger_ship) :
 		spawn_enemy(big_ship_asset.instantiate())
 		

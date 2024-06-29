@@ -48,6 +48,5 @@ func update_health_bar():
 	$HealthBar.value = float(current_health) / float(health)*100
 
 
-
 func _on_enemy_destroyed(position):
 	pass # Replace with function body.

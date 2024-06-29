@@ -37,7 +37,7 @@ position = Vector2(1595, 0)
 [node name="GhostSpawner" parent="Camera2D" instance=ExtResource("3_kn20r")]
 
 [node name="AsteroidSpawner" parent="Camera2D" instance=ExtResource("3_gsjhc")]
-position = Vector2(1588, -4)
+position = Vector2(1827, -4)
 
 [node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
 unique_name_in_owner = true

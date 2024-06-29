@@ -1,9 +1,10 @@
-[gd_scene load_steps=909 format=3 uid="uid://d2d8nxrywa8u2"]
+[gd_scene load_steps=910 format=3 uid="uid://d2d8nxrywa8u2"]
 
 [ext_resource type="Script" path="res://scenes/UIs/title_screen.gd" id="1_rb0yl"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="2_ac7oj"]
 [ext_resource type="Texture2D" uid="uid://dcopl4ixxcn7y" path="res://assets/background/healthy_planet.png" id="3_vuy7s"]
 [ext_resource type="AudioStream" uid="uid://b5a2m7i6wap4r" path="res://assets/audio/UI/Minimalist1.mp3" id="4_7uqiv"]
+[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="4_pjbmt"]
 [ext_resource type="AudioStream" uid="uid://cb0aho3pk4gwv" path="res://assets/audio/musics/FTL-title.mp3" id="5_bp8od"]
 [ext_resource type="AudioStream" uid="uid://cjt54x3nmoiyg" path="res://assets/audio/UI/Minimalist11.mp3" id="5_rs8ve"]
 
@@ -6408,6 +6409,10 @@ stream = ExtResource("5_rs8ve")
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bp8od")
+
+[node name="SpaceParallaxBackground" parent="." instance=ExtResource("4_pjbmt")]
+scroll_base_offset = Vector2(0, 2150)
+scroll_base_scale = Vector2(1, 1)
 
 [connection signal="mouse_entered" from="ColorRect3/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect3/StartButton" to="." method="_on_start_button_pressed"]

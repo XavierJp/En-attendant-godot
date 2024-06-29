@@ -1,6 +1,6 @@
 extends Area2D
 
-const damage = 50
+const damage = 25
 
 func _process(_delta):
 	for body in self.get_overlapping_bodies():

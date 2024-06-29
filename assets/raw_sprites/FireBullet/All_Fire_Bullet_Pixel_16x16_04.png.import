@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjf7gqvnwr3bh"
-path="res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"
+uid="uid://6pbgr0ooeosr"
+path="res://.godot/imported/All_Fire_Bullet_Pixel_16x16_04.png-e61587f70e3c643097da039e1b4c5ea9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapons/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"]
+source_file="res://assets/raw_sprites/FireBullet/All_Fire_Bullet_Pixel_16x16_04.png"
+dest_files=["res://.godot/imported/All_Fire_Bullet_Pixel_16x16_04.png-e61587f70e3c643097da039e1b4c5ea9.ctex"]
 
 [params]
 

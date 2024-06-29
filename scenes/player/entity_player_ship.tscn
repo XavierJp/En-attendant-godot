@@ -1,7 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjq1a3fx722x3"]
+[gd_scene load_steps=7 format=3 uid="uid://bjq1a3fx722x3"]
 
 [ext_resource type="Script" path="res://scenes/player/entity_player_ship.gd" id="1_xoeoy"]
-[ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_3s4gp"]
+[ext_resource type="Texture2D" uid="uid://b14givc48yg63" path="res://assets/raw_sprites/Spaceships/Spaceship 6/spaceship6-1.png" id="2_okpxe"]
+[ext_resource type="Texture2D" uid="uid://0jmyqbp1ocgn" path="res://assets/raw_sprites/Spaceships/Spaceship 6/spaceship6-2.png" id="3_oo5t4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7vp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_okpxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oo5t4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
 size = Vector2(52, 91)
@@ -13,10 +28,12 @@ size = Vector2(70, 100)
 collision_mask = 53
 script = ExtResource("1_xoeoy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(1.73974, 1.73974)
-texture = ExtResource("3_3s4gp")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.57079
+scale = Vector2(3.89974, 3.89974)
+sprite_frames = SubResource("SpriteFrames_f7vp2")
+autoplay = "default"
+frame_progress = 0.783348
 
 [node name="ColisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

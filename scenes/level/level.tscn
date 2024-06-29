@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
-[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
+[ext_resource type="PackedScene" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
 [ext_resource type="Texture2D" uid="uid://8akxsfhy0od1" path="res://assets/background/Parallax/Backgrounds/Red1.png" id="7_tq6fg"]
 [ext_resource type="Texture2D" uid="uid://bie7ud3bxvq1d" path="res://assets/background/Parallax/Backgrounds/YellowStars.png" id="8_a7qgh"]
 

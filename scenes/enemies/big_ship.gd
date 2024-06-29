@@ -1,4 +1,4 @@
-extends Enemy
+extends EntityEnemy
 
 func loot_nitro_on_death():
 	Store.add_nitro_boost(10)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjf7gqvnwr3bh"
-path="res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"
+uid="uid://c7baa4pcm7kbd"
+path="res://.godot/imported/spaceship2-2.png-720f98a0eb26c9385f09dc339394e6a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapons/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"]
+source_file="res://assets/raw_sprites/Spaceships/Spaceship 2/spaceship2-2.png"
+dest_files=["res://.godot/imported/spaceship2-2.png-720f98a0eb26c9385f09dc339394e6a5.ctex"]
 
 [params]
 

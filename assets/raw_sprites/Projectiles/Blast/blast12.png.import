@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjf7gqvnwr3bh"
-path="res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"
+uid="uid://ctoqs3srcf542"
+path="res://.godot/imported/blast12.png-5c4a5994d98230b9221d8fd6addde867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapons/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"]
+source_file="res://assets/raw_sprites/Projectiles/Blast/blast12.png"
+dest_files=["res://.godot/imported/blast12.png-5c4a5994d98230b9221d8fd6addde867.ctex"]
 
 [params]
 

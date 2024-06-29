@@ -1,4 +1,4 @@
-extends Enemy
+extends EntityEnemy
 
 func _ready():
 	speed = 5000

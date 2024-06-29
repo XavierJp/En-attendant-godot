@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjf7gqvnwr3bh"
-path="res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"
+uid="uid://c2eymhh5ukmmh"
+path="res://.godot/imported/planet3.png-4929483ef35f0fb26b0bfba2aa5c22bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapons/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-5df45610f3bdf73bfb049c4bb50dd96d.ctex"]
+source_file="res://assets/raw_sprites/Planets/planet3.png"
+dest_files=["res://.godot/imported/planet3.png-4929483ef35f0fb26b0bfba2aa5c22bf.ctex"]
 
 [params]
 

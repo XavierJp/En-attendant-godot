@@ -13,3 +13,5 @@ func spawn_ghost(inputs: PackedVector2Array):
 	var ghost = ghost_asset.instantiate()
 	ghost.set_inputs(inputs)
 	self.add_child(ghost)
+	for weapon in ghost.inventory.create_weapons():
+		ghost.add_child(weapon)

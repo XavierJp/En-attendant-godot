@@ -20,8 +20,8 @@ func start_new_run():
 	ghost_spawned_counter = 0
 	
 func get_score():
-	return str(int(kill_score + position_score))
-	
+	return int(kill_score + position_score)	
+
 func has_ghost():
 	return ghost_run.size() >0
 	

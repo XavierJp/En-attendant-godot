@@ -9,7 +9,7 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 	
 func _ready():
-	description.text += "\n\nSCORE : " + Store.get_score()
+	description.text += "\n\nSCORE : " + str(Store.get_score())
 
 func _on_button_mouse_entered():
 	$HoverButtonSound.play()

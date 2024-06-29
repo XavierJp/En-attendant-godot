@@ -32,9 +32,9 @@ func _process(delta):
 		pause()
 	
 	ghost_gauge_bar.value = Store.ghost_gauge
-	score_label.text = "Score : "+Store.get_score()
-
-
-func _on_timer_timeout():
+	score_label.text = "Score : "+str(Store.get_score())
 	for weapon in player.inventory.weapons:
-		weapon.upgrade()
+		if Store.get_score() > weapon.level * 10 ** weapon.level + 1:
+			weapon.upgrade()
+
+

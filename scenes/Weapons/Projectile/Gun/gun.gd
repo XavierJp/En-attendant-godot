@@ -12,6 +12,9 @@ func angles():
 		return [-PI/4,-PI/16,PI/16,PI/4]
 	elif level == 4:
 		return [-100, -50, 0, 50, 100]
+	else:
+		return [-100, -50, 0, 50, 100]
+		
 
 func _on_bullet_timer_timeout():
 	var bullet = preload("res://scenes/Weapons/Projectile/bullet.tscn")

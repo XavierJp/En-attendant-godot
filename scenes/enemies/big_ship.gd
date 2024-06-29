@@ -1,11 +1,11 @@
 extends EntityEnemy
 
-func loot_nitro_on_death():
-	Store.add_nitro_boost(10)
+func increase_ghost_gauge():
+	Store.increase_ghost_gauge(100)
 
 func _ready():
 	speed = 2000
-	health = 5000
+	health = 2000
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
 func move(delta: float):

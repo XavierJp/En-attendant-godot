@@ -6,5 +6,5 @@ func _ready():
 	
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
-func loot_nitro_on_death():
-	Store.add_nitro_boost(1)
+func increase_ghost_gauge():
+	Store.increase_ghost_gauge(10)

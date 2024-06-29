@@ -1,8 +1,9 @@
-[gd_scene load_steps=631 format=3 uid="uid://xwpxg8qp8tpl"]
+[gd_scene load_steps=632 format=3 uid="uid://xwpxg8qp8tpl"]
 
 [ext_resource type="Script" path="res://scenes/UIs/game_over.gd" id="1_i0rkl"]
 [ext_resource type="Texture2D" uid="uid://d3eb2esa40113" path="res://assets/background/black_hole.png" id="2_3v8bf"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="2_5cs5l"]
+[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="4_xtjt2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agdnb"]
 atlas = ExtResource("2_3v8bf")
@@ -4470,6 +4471,10 @@ offset_bottom = 114.0
 theme = ExtResource("2_5cs5l")
 text = "Quit
 "
+
+[node name="SpaceParallaxBackground" parent="." instance=ExtResource("4_xtjt2")]
+scroll_base_offset = Vector2(0, 2150)
+scroll_base_scale = Vector2(1, 1)
 
 [connection signal="pressed" from="ColorRect3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect3/QuitButton" to="." method="_on_quit_button_pressed"]

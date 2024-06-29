@@ -24,5 +24,5 @@ func _process(delta):
 		pause()
 	
 	# Score
-	$Camera2D/VBoxContainer/ScoreLabel.text = Store.get_score()
-	$Camera2D/VBoxContainer2/NitroBar.value = Store.nitro_boost
+	$Camera2D/VBoxContainer/ScoreLabel.text = "Score : "+Store.get_score()
+	$Camera2D/GhostGauge/GhostGaugeBar.value = Store.ghost_gauge

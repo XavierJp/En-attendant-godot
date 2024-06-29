@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=15 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
 [ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
+[ext_resource type="Script" path="res://scenes/level/GhostGauge.gd" id="9_r03ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)
@@ -44,7 +45,7 @@ unique_name_in_owner = true
 [node name="CameraWall" type="StaticBody2D" parent="Camera2D"]
 position = Vector2(0, -3)
 collision_layer = 32
-collision_mask = 59
+collision_mask = 35
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CameraWall"]
 position = Vector2(2468, -19)
@@ -63,23 +64,33 @@ position = Vector2(-1470, 10)
 shape = SubResource("RectangleShape2D_ybcw4")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D"]
-offset_left = -400.0
-offset_top = -496.0
-offset_right = -117.0
-offset_bottom = -436.0
+offset_left = -405.0
+offset_top = -494.0
+offset_right = -122.0
+offset_bottom = -434.0
 
 [node name="ProgressBar2" type="ProgressBar" parent="Camera2D/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 20)
+custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
 theme_override_fonts/font = ExtResource("5_o6ok1")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 30
 theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 value = 100.0
 
-[node name="NitroBar" type="ProgressBar" parent="Camera2D/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 20)
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/VBoxContainer2"]
+layout_mode = 2
+
+[node name="GhostGauge" type="VBoxContainer" parent="Camera2D"]
+offset_left = 901.0
+offset_top = -494.0
+offset_right = 1401.0
+offset_bottom = -397.0
+script = ExtResource("9_r03ci")
+
+[node name="GhostGaugeBar" type="ProgressBar" parent="Camera2D/GhostGauge"]
+custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
 theme_override_fonts/font = ExtResource("5_o6ok1")
@@ -87,19 +98,29 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
 max_value = 1000.0
+step = 1.0
 show_percentage = false
 
+[node name="GhostAvailability" type="Label" parent="Camera2D/GhostGauge"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_xxbw1")
+theme_override_font_sizes/font_size = 30
+text = "Ghost is available !
+(press C)"
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D"]
-offset_left = -400.0
-offset_top = -432.0
-offset_right = -355.0
-offset_bottom = -372.0
+offset_left = -370.0
+offset_top = 393.0
+offset_right = -1.0
+offset_bottom = 453.0
 
 [node name="ScoreLabel" type="Label" parent="Camera2D/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_xxbw1")
 theme_override_font_sizes/font_size = 60
-text = "0"
+text = "Score : 0"
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_o6erm")]
 visible = false

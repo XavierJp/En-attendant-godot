@@ -5,7 +5,7 @@ var speed = 3000
 var health = 50
 var player
 
-func loot_nitro_on_death():
+func increase_ghost_gauge():
 	pass # default
 
 func _ready():
@@ -31,7 +31,7 @@ func move(delta: float):
 func take_damage(damage):
 	health -= damage
 	if health <= 0:
-		self.loot_nitro_on_death()
+		self.increase_ghost_gauge()
 		Store.kill_score += 1 
 		queue_free()
 

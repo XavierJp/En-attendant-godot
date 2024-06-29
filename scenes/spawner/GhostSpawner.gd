@@ -2,9 +2,12 @@ extends EntitySpawner
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")	
 
-func _ready():
-	for inputs in Store.All_runs :
-		spawn_ghost(inputs)
+func _process(delta):
+	if Input.is_action_just_pressed("call_ghost"):
+		if Store.ghost_gauge == Store.max_ghost_gauge && Store.has_ghost():
+			spawn_ghost(Store.All_runs[0])
+			Store.ghost_spawned_counter += 1
+			Store.ghost_gauge = 0
 
 func spawn_ghost(inputs: PackedVector2Array):
 	var ghost = ghost_asset.instantiate()

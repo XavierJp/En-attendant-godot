@@ -1,8 +1,9 @@
-[gd_scene load_steps=906 format=3 uid="uid://d2d8nxrywa8u2"]
+[gd_scene load_steps=907 format=3 uid="uid://d2d8nxrywa8u2"]
 
 [ext_resource type="Script" path="res://scenes/UIs/title_screen.gd" id="1_rb0yl"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="2_ac7oj"]
 [ext_resource type="Texture2D" uid="uid://dcopl4ixxcn7y" path="res://assets/background/healthy_planet.png" id="3_vuy7s"]
+[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="4_pjbmt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5rdk"]
 font_size = 80
@@ -6396,6 +6397,10 @@ sprite_frames = SubResource("SpriteFrames_n8h8q")
 animation = &"healthy_planet"
 autoplay = "healthy_planet"
 frame_progress = 0.365591
+
+[node name="SpaceParallaxBackground" parent="." instance=ExtResource("4_pjbmt")]
+scroll_base_offset = Vector2(0, 2150)
+scroll_base_scale = Vector2(1, 1)
 
 [connection signal="pressed" from="ColorRect3/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ColorRect3/QuitButton" to="." method="_on_quit_button_pressed"]

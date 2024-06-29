@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
-[ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
+[ext_resource type="PackedScene" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)

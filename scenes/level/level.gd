@@ -37,8 +37,8 @@ func _process(delta):
 	$SpawnSmallShipTimer.wait_time = initial_ship_timer / (Store.position_score + 1) 
 	
 func spawn_enemy(new_enemy):
-	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(0, 10)
-	new_enemy.global_position.y = %HumanPlayer.global_position.y + randi_range(-1000, 1000)
+	new_enemy.position.x = 2000*randi_range(1, 1.2)
+	new_enemy.position.y = randi_range(-1000, 1000)
 	%HumanPlayer.add_sibling(new_enemy)
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")

@@ -4,4 +4,3 @@ const speed = 600
 
 func _process(delta):
 	position.x += delta * speed
-	print("")

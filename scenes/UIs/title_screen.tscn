@@ -6395,7 +6395,7 @@ scale = Vector2(3.09333, 3.09333)
 sprite_frames = SubResource("SpriteFrames_n8h8q")
 animation = &"healthy_planet"
 autoplay = "healthy_planet"
-frame_progress = 0.161162
+frame_progress = 0.365591
 
 [connection signal="pressed" from="ColorRect3/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ColorRect3/QuitButton" to="." method="_on_quit_button_pressed"]

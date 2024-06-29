@@ -11,22 +11,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_0amis")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0amis")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0amis")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0amis")
 }],
 "loop": true,
 "name": &"default",
-"speed": 4.0
+"speed": 14.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ocab"]
@@ -43,7 +31,7 @@ position = Vector2(0, -4)
 scale = Vector2(5.3125, 5.3125)
 sprite_frames = SubResource("SpriteFrames_aciwv")
 autoplay = "default"
-frame_progress = 0.770045
+frame_progress = 0.957233
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ocab")

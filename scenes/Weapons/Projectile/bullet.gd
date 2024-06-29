@@ -3,8 +3,7 @@ extends Area2D
 var travelled_distance = 0
 const SPEED = 2000
 const RANGE = 12000
-const damage = 25
-
+var damage = 25
 var angle = 0
 
 func _process(delta):

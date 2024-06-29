@@ -48,3 +48,7 @@ quit={
 2d_physics/layer_4="Allied Weapons"
 2d_physics/layer_5="Enemy Weapons"
 2d_physics/layer_6="Static Walls"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

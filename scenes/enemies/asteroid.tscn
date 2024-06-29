@@ -5,6 +5,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oppvl"]
 friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlli7"]
 radius = 12.0416
@@ -13,6 +14,7 @@ radius = 12.0416
 collision_layer = 4
 collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_oppvl")
+can_sleep = false
 script = ExtResource("1_h04wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

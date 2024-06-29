@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlli7"]
-radius = 7.0
+radius = 12.0416
 
 [node name="Asteroid" type="RigidBody2D"]
 collision_layer = 4
@@ -19,4 +19,5 @@ script = ExtResource("1_h04wr")
 shape = SubResource("CircleShape2D_tlli7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.88, 1.88)
 texture = ExtResource("2_7vlj8")

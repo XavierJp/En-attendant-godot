@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr3j8wjug48fh"]
+
+[ext_resource type="PackedScene" uid="uid://cjpsqoqconts1" path="res://scenes/spawner/entity_spawner.tscn" id="1_p2rsv"]
+[ext_resource type="Script" path="res://scenes/spawner/ShipSpawner.gd" id="2_yga8q"]
+
+[node name="ShipSpawner" instance=ExtResource("1_p2rsv")]
+script = ExtResource("2_yga8q")

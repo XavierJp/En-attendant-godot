@@ -26,6 +26,9 @@ script = ExtResource("1_rhcvp")
 offset = Vector2(500, 2.08165e-12)
 script = ExtResource("3_sw05i")
 
+[node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
+unique_name_in_owner = true
+
 [node name="CameraWall" type="StaticBody2D" parent="Camera2D"]
 position = Vector2(0, -3)
 collision_layer = 32
@@ -85,9 +88,6 @@ layout_mode = 2
 theme = ExtResource("4_xxbw1")
 theme_override_font_sizes/font_size = 60
 text = "0"
-
-[node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
-unique_name_in_owner = true
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_o6erm")]
 visible = false

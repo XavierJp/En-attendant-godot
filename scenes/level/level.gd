@@ -42,14 +42,14 @@ func _process(delta):
 func spawn_enemy(new_enemy):
 	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(0, 10)
 	new_enemy.global_position.y = %HumanPlayer.global_position.y + randi_range(-1000, 1000)
-	get_node('Camera2D').add_child(new_enemy)
+	%HumanPlayer.add_sibling(new_enemy)
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
 
 func spawn_ghost(inputs: PackedVector2Array):
 	var ghost: Ghost = preload("res://scenes/player/ghost_player.tscn").instantiate()
 	ghost.set_inputs(inputs)
-	get_node("Camera2D").add_child(ghost)
+	%HumanPlayer.add_sibling(ghost)
 	
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")

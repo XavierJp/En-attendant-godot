@@ -1,6 +1,6 @@
 extends EntityProjectileWeapon
 
-var angles = [-100, 0, 100]
+var angles = [-100, -50, -2-1,0,1,2, 50, 100]
 
 func _on_bullet_timer_timeout():
 	var bullet = preload("res://scenes/Weapons/Projectile/bullet.tscn")

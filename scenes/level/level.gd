@@ -48,7 +48,6 @@ const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 func _on_spawn_small_ship_timer_timeout():
 	var new_enemy
 	var level = abs(%HumanPlayer.global_position.x) / 5000 + 1
-	print(level)
 	var should_spaw_bigger_ship =  %HumanPlayer.global_position.x > 100 and randi() % 20 == 0
 	if (should_spaw_bigger_ship) :
 		new_enemy = big_ship_asset.instantiate()

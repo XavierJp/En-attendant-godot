@@ -13,7 +13,6 @@ func _physics_process(delta):
 	var overlapping_enemies =  overlapping_bodies.filter(func(body): return body.has_method("take_damage"))
 	if overlapping_enemies.size() > 0:
 		health -= overlapping_enemies.size()
-		print(health)
 		get_node("../VBoxContainer2/ProgressBar2").value = health
 		
 		if health <= 0:

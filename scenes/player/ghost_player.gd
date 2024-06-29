@@ -8,7 +8,6 @@ var input_array = PackedVector2Array([])
 
 func _physics_process(delta):
 	if delta_index >= input_array.size() :
-		print("Jean mich is dead ")
 		queue_free()
 		return
 	direction = input_array[delta_index]

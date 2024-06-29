@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjq1a3fx722x3"]
 
 [ext_resource type="Script" path="res://scenes/player/player_ship.gd" id="1_cdv7o"]
-[ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/shield_weapon.tscn" id="2_6ejrk"]
+[ext_resource type="PackedScene" uid="uid://cot1q6540hllf" path="res://scenes/Weapons/Zone/shield_weapon.tscn" id="2_g0n3x"]
 [ext_resource type="Texture2D" uid="uid://b7r8jydrvj3tx" path="res://assets/player/tiny_ship14.png" id="3_xwkpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11888"]
@@ -14,7 +14,7 @@ size = Vector2(70, 100)
 collision_mask = 53
 script = ExtResource("1_cdv7o")
 
-[node name="ShieldWeapon" parent="." instance=ExtResource("2_6ejrk")]
+[node name="ShieldWeapon" parent="." instance=ExtResource("2_g0n3x")]
 modulate = Color(0.231373, 1, 1, 0.662745)
 scale = Vector2(2, 2)
 
@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_7yk41")
 position = Vector2(26, 0)
 
 [node name="BulletTimer" type="Timer" parent="."]
-wait_time = 0.12
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

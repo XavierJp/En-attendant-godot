@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var nitro_bar: ProgressBar = $Camera2D/VBoxContainer2/NitroBar
 @onready var score_label: Label = $Camera2D/VBoxContainer/ScoreLabel
 @onready var player: HumanPlayer = $Camera2D/HumanPlayer
 @onready var ost_music: AudioStreamPlayer = $OSTMusic

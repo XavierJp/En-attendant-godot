@@ -33,6 +33,7 @@ func take_damage(damage):
 	# init on first damage
 	if(current_health == -1):
 		current_health = health
+
 	current_health = max(0, current_health -damage)
 	update_health_bar()
 	if current_health == 0:

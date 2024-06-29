@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=17 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
@@ -8,22 +8,16 @@
 [ext_resource type="Script" path="res://scenes/level/Camera2D.gd" id="3_sw05i"]
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
 [ext_resource type="Theme" uid="uid://02a8chd2ikkf" path="res://Themes/progress_bar.tres" id="4_xxbw1"]
-[ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
 [ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
+[ext_resource type="Texture2D" uid="uid://bdsjuy1emdydq" path="res://assets/ui/load_bar/empty.png" id="7_gei63"]
+[ext_resource type="Texture2D" uid="uid://ch7oycpylsc1d" path="res://assets/ui/load_bar/cadre.png" id="8_2pox5"]
+[ext_resource type="Texture2D" uid="uid://dkebslfdystif" path="res://assets/ui/load_bar/inner.png" id="9_qm5xk"]
 [ext_resource type="Script" path="res://scenes/level/GhostGauge.gd" id="9_r03ci"]
+[ext_resource type="Texture2D" uid="uid://hvb41l1pb0m7" path="res://assets/ui/load_bar/inner2.png" id="9_xxsx0"]
 [ext_resource type="AudioStream" uid="uid://cvnbw12fc52q0" path="res://assets/audio/musics/kendal-giallo-inferno.mp3" id="11_f1kwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk0k"]
-bg_color = Color(0.321569, 0.00784314, 0.0509804, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c44ca"]
-bg_color = Color(0.0392157, 0.729412, 0, 1)
-border_color = Color(0.65098, 0.929412, 0, 1)
-shadow_color = Color(1, 0.733333, 0, 1)
-shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rhcvp")
@@ -67,40 +61,37 @@ shape = SubResource("RectangleShape2D_ybcw4")
 [node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D"]
 offset_left = -405.0
 offset_top = -494.0
-offset_right = -122.0
-offset_bottom = -434.0
+offset_right = -405.0
+offset_bottom = -494.0
 
-[node name="ProgressBar2" type="ProgressBar" parent="Camera2D/VBoxContainer2"]
-custom_minimum_size = Vector2(500, 50)
+[node name="HealthBar" type="TextureProgressBar" parent="Camera2D/VBoxContainer2"]
+custom_minimum_size = Vector2(500, 60)
 layout_mode = 2
-theme = ExtResource("4_xxbw1")
-theme_override_fonts/font = ExtResource("5_o6ok1")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
-theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
+size_flags_stretch_ratio = 3.6
 value = 100.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D/VBoxContainer2"]
-layout_mode = 2
+nine_patch_stretch = true
+texture_under = ExtResource("7_gei63")
+texture_over = ExtResource("8_2pox5")
+texture_progress = ExtResource("9_qm5xk")
+texture_progress_offset = Vector2(2.08165e-12, 3)
 
 [node name="GhostGauge" type="VBoxContainer" parent="Camera2D"]
-offset_left = 901.0
+offset_left = 806.0
 offset_top = -494.0
-offset_right = 1401.0
-offset_bottom = -397.0
+offset_right = 1406.0
+offset_bottom = -352.0
 script = ExtResource("9_r03ci")
 
-[node name="GhostGaugeBar" type="ProgressBar" parent="Camera2D/GhostGauge"]
-custom_minimum_size = Vector2(500, 50)
+[node name="GhostGaugeBar" type="TextureProgressBar" parent="Camera2D/GhostGauge"]
+custom_minimum_size = Vector2(500, 60)
 layout_mode = 2
-theme = ExtResource("4_xxbw1")
-theme_override_fonts/font = ExtResource("5_o6ok1")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/background = SubResource("StyleBoxFlat_1kk0k")
-theme_override_styles/fill = SubResource("StyleBoxFlat_c44ca")
+size_flags_stretch_ratio = 3.6
 max_value = 1000.0
-step = 1.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("7_gei63")
+texture_over = ExtResource("8_2pox5")
+texture_progress = ExtResource("9_xxsx0")
+texture_progress_offset = Vector2(2.08165e-12, 3)
 
 [node name="GhostAvailability" type="Label" parent="Camera2D/GhostGauge"]
 unique_name_in_owner = true

@@ -17,6 +17,8 @@ func pause():
 func _ready():
 	player.global_position.y = randi_range(-1000, 1000)
 	Store.start_new_run()
+	$OSTMusic.play()
+	
 
 func _process(delta):
 	# Check for pause

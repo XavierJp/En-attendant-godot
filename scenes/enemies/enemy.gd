@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-var speed = 30000
+var speed = 300
 var health = 50
 var player
 

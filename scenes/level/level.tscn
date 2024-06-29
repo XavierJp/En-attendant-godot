@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=10 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
-[ext_resource type="PackedScene" uid="uid://cqqc735155vem" path="res://scenes/level/wall.tscn" id="2_xgegu"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
 [ext_resource type="Script" path="res://scenes/level/Camera2D.gd" id="3_sw05i"]
 [ext_resource type="PackedScene" uid="uid://biu0jvckrekjw" path="res://scenes/UIs/pause_menu.tscn" id="4_o6erm"]
@@ -9,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
-size = Vector2(417, 1009)
+size = Vector2(2129.5, 1093)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk0k"]
 bg_color = Color(0.321569, 0.00784314, 0.0509804, 1)
@@ -23,12 +22,6 @@ shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rhcvp")
 
-[node name="Wall" parent="." instance=ExtResource("2_xgegu")]
-position = Vector2(0, 1000)
-
-[node name="Wall2" parent="." instance=ExtResource("2_xgegu")]
-position = Vector2(0, -1000)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(500, 2.08165e-12)
 script = ExtResource("3_sw05i")
@@ -38,11 +31,19 @@ collision_layer = 32
 collision_mask = 63
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CameraWall"]
-position = Vector2(1582, -10)
+position = Vector2(2468, -19)
 shape = SubResource("RectangleShape2D_ybcw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraWall"]
-position = Vector2(-605, -5)
+position = Vector2(490, 1044)
+shape = SubResource("RectangleShape2D_ybcw4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Camera2D/CameraWall"]
+position = Vector2(506.25, -1037.5)
+shape = SubResource("RectangleShape2D_ybcw4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Camera2D/CameraWall"]
+position = Vector2(-1470, 10)
 shape = SubResource("RectangleShape2D_ybcw4")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D"]

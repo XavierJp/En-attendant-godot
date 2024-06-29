@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cigh1yatmoy0j"]
 
-[ext_resource type="PackedScene" uid="uid://c6m48a0b3767r" path="res://scenes/enemies/entity_enemy.tscn" id="1_i6qr4"]
+[ext_resource type="PackedScene" uid="uid://ce02pyvksfu80" path="res://scenes/enemies/entity_enemy.tscn" id="1_i6qr4"]
 [ext_resource type="Script" path="res://scenes/enemies/SmallShip.gd" id="2_p7shj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tv3p"]

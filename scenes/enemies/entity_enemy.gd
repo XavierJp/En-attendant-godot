@@ -3,6 +3,7 @@ class_name EntityEnemy
 
 var speed = 3000
 var health = 50
+var max_health = 50
 var player
 
 func loot_nitro_on_death():
@@ -30,10 +31,17 @@ func move(delta: float):
 	
 func take_damage(damage):
 	health -= damage
+	update_health_bar()
 	if health <= 0:
 		self.loot_nitro_on_death()
 		Store.kill_score += 1 
 		queue_free()
 
-
+func update_health_bar():
+	$Health100.visible = float(health) / float(max_health) >= 1
+	$Health80.visible = float(health) / float(max_health) >= 0.8
+	$Health60.visible = float(health) / float(max_health) >= 0.6
+	$Health40.visible = float(health) / float(max_health) >= 0.4
+	$Health20.visible = float(health) / float(max_health) >= 0.2
+	
 

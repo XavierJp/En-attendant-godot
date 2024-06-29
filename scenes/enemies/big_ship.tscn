@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv4n13138k31v"]
+[gd_scene load_steps=7 format=3 uid="uid://qpyfhobn5dts"]
 
-[ext_resource type="PackedScene" uid="uid://c6m48a0b3767r" path="res://scenes/enemies/entity_enemy.tscn" id="1_5ad5h"]
+[ext_resource type="PackedScene" uid="uid://ce02pyvksfu80" path="res://scenes/enemies/entity_enemy.tscn" id="1_5ad5h"]
 [ext_resource type="Script" path="res://scenes/enemies/big_ship.gd" id="2_pcm1u"]
 [ext_resource type="Texture2D" uid="uid://mk5w7ll64nh4" path="res://assets/enemies/spaceship1-1.png" id="3_tapsk"]
 [ext_resource type="Texture2D" uid="uid://bv7nbcajqpskk" path="res://assets/enemies/spaceship1-2.png" id="4_84axt"]

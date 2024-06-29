@@ -6,6 +6,7 @@ func loot_nitro_on_death():
 func _ready():
 	speed = 2000
 	health = 5000
+	max_health = 5000
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
 func move(delta: float):

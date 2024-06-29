@@ -1,4 +1,4 @@
-extends PlayerShip
+extends EntityPlayerShip
 class_name Ghost
 
 var delta_index = 0

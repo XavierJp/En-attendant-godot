@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://bnixuen4whja8" path="res://assets/fonts/pixelmix/pixelmix_bold.ttf" id="5_o6ok1"]
 [ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
 [ext_resource type="Script" path="res://scenes/level/GhostGauge.gd" id="9_r03ci"]
+[ext_resource type="AudioStream" uid="uid://cvnbw12fc52q0" path="res://assets/audio/musics/kendal-giallo-inferno.mp3" id="11_f1kwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybcw4"]
 size = Vector2(2129.5, 1093)
@@ -128,3 +129,6 @@ visible = false
 [node name="SpaceParallaxBackground" parent="." instance=ExtResource("7_b1c0c")]
 scroll_base_offset = Vector2(0, 2150)
 scroll_base_scale = Vector2(1, 1)
+
+[node name="OSTMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_f1kwd")

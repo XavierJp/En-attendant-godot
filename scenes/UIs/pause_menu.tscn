@@ -41,6 +41,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Label"]
+layout_mode = 0
 offset_left = -150.0
 offset_top = 228.0
 offset_right = 430.0

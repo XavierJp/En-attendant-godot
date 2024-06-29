@@ -1,6 +1,4 @@
-extends Node2D
-
-class_name EntityProjectileWeapon
+class_name EntityProjectileWeapon extends Node2D
 
 var wait_time = 0.1
 

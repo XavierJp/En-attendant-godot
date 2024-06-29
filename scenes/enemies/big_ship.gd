@@ -6,6 +6,7 @@ func increase_ghost_gauge():
 func _ready():
 	speed = 2000
 	health = 2000
+	max_health = 5000
 	player = get_node("/root/Level/Camera2D/HumanPlayer")
 
 func move(delta: float):

@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var nitro_bar: ProgressBar = $Camera2D/VBoxContainer2/NitroBar
+@onready var score_label: Label = $Camera2D/VBoxContainer/ScoreLabel
 @onready var player: HumanPlayer = $Camera2D/HumanPlayer
+@onready var ost_music: AudioStreamPlayer = $OSTMusic
 @onready var pause_menu = $Camera2D/PauseMenu
 
 var paused = false
@@ -17,6 +20,8 @@ func pause():
 func _ready():
 	player.global_position.y = randi_range(-1000, 1000)
 	Store.start_new_run()
+	ost_music.play()
+	
 
 func _process(delta):
 	# Check for pause
@@ -26,3 +31,5 @@ func _process(delta):
 	# Score
 	$Camera2D/VBoxContainer/ScoreLabel.text = "Score : "+Store.get_score()
 	$Camera2D/GhostGauge/GhostGaugeBar.value = Store.ghost_gauge
+	
+	score_label.text = Store.get_score()

@@ -4,7 +4,7 @@ enum AsteroidSize {SMALL, MEDIUM, LARGE}
 
 signal exploded(pos: Vector2, new_rotation: float, size: Asteroid.AsteroidSize, points: int)
 
-const BASE_SPEED: float = 25.0
+const BASE_SPEED: float = 5.0
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var cshape: CollisionShape2D = $CollisionShape2D
@@ -25,7 +25,23 @@ func _process(delta: float) -> void:
 
 func _ready():
 	freeze = true
+	size = AsteroidSize.values().pick_random()
+	initial_move_angle = randf_range(0.0, 1.0)
+	angular_velocity = randf_range(0.0, max_speed)
+	
+	match size:
+		AsteroidSize.MEDIUM:
+			mass *= 2
+			sprite.scale *=2
+			cshape.scale *=2
+		AsteroidSize.LARGE:
+			mass *= 4
+			sprite.scale *=4
+			cshape.scale *=4
+
+#
+#
+#
 
 func take_damage(damage: int) -> void:
 	queue_free()
-

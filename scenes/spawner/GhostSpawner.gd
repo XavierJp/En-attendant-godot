@@ -5,7 +5,7 @@ const ghost_asset = preload("res://scenes/player/ghost_player.tscn")
 func _process(delta):
 	if Input.is_action_just_pressed("call_ghost"):
 		if Store.ghost_gauge == Store.max_ghost_gauge && Store.has_ghost():
-			spawn_ghost(Store.All_runs[0])
+			spawn_ghost(Store.ghost_run)
 			Store.ghost_spawned_counter += 1
 			Store.ghost_gauge = 0
 

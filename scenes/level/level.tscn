@@ -140,5 +140,3 @@ scroll_base_scale = Vector2(1, 1)
 
 [node name="OSTMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_f1kwd")
-
-[node name="DestructionSprites" type="Node2D" parent="."]

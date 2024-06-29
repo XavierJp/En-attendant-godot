@@ -11,3 +11,6 @@ func move(delta: float):
 	velocity = direction * speed * (3 if distance > 500 else 1) * delta
 	rotation = direction.angle()
 	move_and_slide()
+
+func loot_nitro_on_death():
+	Store.add_nitro_boost(1)

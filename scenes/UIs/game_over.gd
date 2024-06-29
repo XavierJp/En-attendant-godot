@@ -7,4 +7,4 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 	
 func _ready():
-	$ColorRect/RichTextLabel.text += "Scoooore : " + Store.get_score()
+	$ColorRect/RichTextLabel.text += "\nSCORE : " + Store.get_score()

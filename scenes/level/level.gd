@@ -13,8 +13,7 @@ func pause():
 	paused = !paused
 
 func _ready():
-	Store.kill_score = 0
-	Store.position_score = 0
+	Store.start_new_run()
 	for inputs in Store.All_runs :
 		spawn_ghost(inputs)
 
@@ -24,8 +23,9 @@ func _process(delta):
 		pause()
 	
 	# Score
-	$HumanPlayer/Score.text = Store.get_score()
-
+	$HumanPlayer/VBoxContainer/ScoreLabel.text = Store.get_score()
+	$HumanPlayer/VBoxContainer2/NitroBar.value = Store.nitro_boost
+	
 func spawn_enemy(new_enemy):
 	new_enemy.global_position = %HumanPlayer.global_position 
 	new_enemy.global_position.x = %HumanPlayer.global_position.x + randi_range(500, 1500)

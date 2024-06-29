@@ -1,5 +1,8 @@
 extends Enemy
 
+func loot_nitro_on_death():
+	Store.add_nitro_boost(10)
+
 func _ready():
 	const speed = 100000
 	var health = 1000

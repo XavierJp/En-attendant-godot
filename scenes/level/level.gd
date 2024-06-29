@@ -1,7 +1,6 @@
 extends Node2D
 
-@onready var player = $Camera2D/HumanPlayer
-
+@onready var player: HumanPlayer = $Camera2D/HumanPlayer
 @onready var pause_menu = $Camera2D/PauseMenu
 
 var paused = false
@@ -58,4 +57,11 @@ func _on_spawn_small_ship_timer_timeout():
 	else:
 		new_enemy = small_ship_asset.instantiate()
 
+	spawn_asteroid()
+	
 	spawn_enemy(new_enemy)
+
+const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
+func spawn_asteroid() -> void:
+	var asteroid = asteroid_asset.instantiate()
+	%HumanPlayer.add_sibling(asteroid)

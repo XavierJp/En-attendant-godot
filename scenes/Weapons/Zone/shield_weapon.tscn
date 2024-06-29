@@ -14,7 +14,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ocab"]
@@ -30,8 +30,8 @@ modulate = Color(1, 1, 1, 0.729412)
 position = Vector2(0, -4)
 scale = Vector2(5.3125, 5.3125)
 sprite_frames = SubResource("SpriteFrames_aciwv")
-autoplay = "default"
-frame_progress = 0.295513
+frame = 1
+frame_progress = 0.35328
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ocab")

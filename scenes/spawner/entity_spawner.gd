@@ -1,5 +1,4 @@
-extends Node2D
-class_name EntitySpawner
+class_name EntitySpawner extends Node2D
 
 var initial_timer = 1
 

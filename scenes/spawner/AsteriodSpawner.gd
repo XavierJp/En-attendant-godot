@@ -11,12 +11,19 @@ const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
 
 func _ready():
 	initial_timer = 1
+	
+func asteroid_count():
+	return 20 if Store.position_score % 1000 < 20 else 1 
+	
 
 func _on_timer_timeout():
-	var asteroid = asteroid_asset.instantiate()
-	asteroid.position.y = randi_range(-500, 500)
-	asteroid.size = Asteroid.AsteroidSize.values().pick_random()
-	spawn_asteroid(asteroid)
+	var i = 0
+	while i < asteroid_count():
+		i+=1
+		var asteroid = asteroid_asset.instantiate()
+		asteroid.position.y = randi_range(-500, 500)
+		asteroid.size = Asteroid.AsteroidSize.values().pick_random()
+		spawn_asteroid(asteroid)
 
 #
 # From EntitySpawner

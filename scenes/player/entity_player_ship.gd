@@ -7,5 +7,5 @@ var inventory = Inventory.new()
 
 func _process(delta):
 	for weapon in self.inventory.weapons:
-		if Store.get_score() > weapon.level * 10 ** weapon.level + 1:
+		if Store.get_score() > 10 ** (weapon.level):
 			weapon.upgrade()

@@ -2,6 +2,7 @@ class_name ShipSpawner extends EntitySpawner
 
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
+const middle_ship_asset = preload("res://scenes/enemies/middle_ship_enemy.tscn")
 
 func update_timer():
 	@warning_ignore("integer_division")
@@ -19,5 +20,10 @@ func _on_timer_timeout():
 	
 	if (should_spaw_bigger_ship) :
 		spawn_enemy(big_ship_asset.instantiate())
+
+	var should_spaw_middle_ship =  Store.position_score > 15 and randi() % 5 == 0
+	
+	if (should_spaw_middle_ship) :
+		spawn_enemy(middle_ship_asset.instantiate())
 		
 	spawn_enemy(small_ship_asset.instantiate())

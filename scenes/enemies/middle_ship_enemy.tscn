@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqha1b4g4juq3"]
+
+[ext_resource type="PackedScene" uid="uid://ce02pyvksfu80" path="res://scenes/enemies/entity_enemy.tscn" id="1_k5wfj"]
+[ext_resource type="Script" path="res://scenes/enemies/middle_ship_enemy.gd" id="2_7q70q"]
+[ext_resource type="Texture2D" uid="uid://n34jh2dmbswb" path="res://assets/raw_sprites/Spaceships/Spaceship 3/spaceship3-1.png" id="2_jl4lf"]
+[ext_resource type="Texture2D" uid="uid://8n4kuchqiam5" path="res://assets/raw_sprites/Spaceships/Spaceship 3/spaceship3-2.png" id="3_4vj7v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rdey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jl4lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4vj7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MiddleShipEnemy" instance=ExtResource("1_k5wfj")]
+script = ExtResource("2_7q70q")
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_0rdey")
+autoplay = "default"
+frame_progress = 0.72085
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 1)
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = 32.0
+offset_top = 17.0
+offset_right = 82.0
+offset_bottom = 57.0

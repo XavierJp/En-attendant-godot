@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://mnvr41aud5tn"]
+[gd_scene load_steps=18 format=3 uid="uid://mnvr41aud5tn"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
-[ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
 [ext_resource type="Script" path="res://scenes/level/ExplosionSpawner.gd" id="3_8svbx"]
 [ext_resource type="PackedScene" uid="uid://0us03b4gylxm" path="res://scenes/spawner/ghost_spawner.tscn" id="3_kn20r"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
@@ -30,9 +29,6 @@ script = ExtResource("3_sw05i")
 
 [node name="ExplosionSpawner" type="Node2D" parent="Camera2D"]
 script = ExtResource("3_8svbx")
-
-[node name="ShipSpawner" parent="Camera2D" instance=ExtResource("3_1luf1")]
-position = Vector2(1595, 0)
 
 [node name="GhostSpawner" parent="Camera2D" instance=ExtResource("3_kn20r")]
 

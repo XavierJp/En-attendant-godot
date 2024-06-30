@@ -5,7 +5,6 @@ const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
 
-@onready var timer: Timer = $Timer
 var asteroid_sizes = Asteroid.AsteroidSize.values()
 
 #
@@ -14,7 +13,7 @@ var asteroid_sizes = Asteroid.AsteroidSize.values()
 
 func _ready():
 	initial_timer = 1
-	timer.autostart = true
+	self.timer.autostart = true
 
 func _on_timer_timeout():
 	var asteroid = asteroid_asset.instantiate()
@@ -27,7 +26,7 @@ func _on_timer_timeout():
 #
 
 func update_timer():
-	timer.wait_time = initial_timer / ((Store.position_score / 3) + 1) 
+	self.timer.wait_time = initial_timer / ((Store.position_score / 3) + 1) 
 
 #
 #

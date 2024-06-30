@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxvw613he4ed7"]
+[gd_scene load_steps=4 format=3 uid="uid://bxvw613he4ed7"]
 
 [ext_resource type="Script" path="res://scenes/level/Wave.gd" id="1_essv4"]
 [ext_resource type="PackedScene" uid="uid://cfa7s75uig7ix" path="res://scenes/spawner/asteroid_spawner.tscn" id="2_g7ter"]
+[ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_w8qit"]
 
 [node name="Wave" type="Node2D"]
 script = ExtResource("1_essv4")
@@ -11,3 +12,6 @@ position = Vector2(1827, -4)
 
 [node name="SomeBigAsteroidSpawner" parent="." instance=ExtResource("2_g7ter")]
 position = Vector2(1827, -4)
+
+[node name="ShipSpawner" parent="." instance=ExtResource("3_w8qit")]
+position = Vector2(1555, 0)

@@ -1,11 +1,11 @@
-extends EntitySpawner
+class_name ShipSpawner extends EntitySpawner
 
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 
 func update_timer():
 	@warning_ignore("integer_division")
-	$Timer.wait_time = initial_timer / (Store.position_score + 1) 
+	self.timer.wait_time = initial_timer / (Store.position_score + 1) 
 
 func _ready():
 	initial_timer = 1

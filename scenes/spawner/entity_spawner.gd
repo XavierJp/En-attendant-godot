@@ -1,9 +1,11 @@
 class_name EntitySpawner extends Node2D
 
+@onready var timer: Timer = $Timer
+
 var initial_timer = 1
 
 func _ready():
-	$Timer.wait_time = initial_timer
+	timer.wait_time = initial_timer
 
 func update_timer():
 	pass

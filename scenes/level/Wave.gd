@@ -15,10 +15,16 @@ var wave = [
 	
 	[20, func some_asteroid(): some_asteroid_spawner.timer.start()],
 	[25, func some_big_asteroid(): some_big_asteroid_spawner.timer.start()],
+	[30, func no_small_asteroid(): some_asteroid_spawner.timer.stop()],
 	[35, func no_more_asteroid(): 
 	some_asteroid_spawner.timer.stop();
 	some_big_asteroid_spawner.timer.stop()
 	],
+	
+	#
+	
+	[40, func some_big_asteroid(): some_big_asteroid_spawner.timer.start()],
+	[45, func no_more_asteroid(): some_big_asteroid_spawner.timer.stop()],
 	
 	#
 	
@@ -30,7 +36,10 @@ var wave = [
 
 func _ready():
 	some_asteroid_spawner.timer.stop()
+	some_asteroid_spawner.asteroid_sizes = [Asteroid.AsteroidSize.SMALL]
+	
 	some_big_asteroid_spawner.timer.stop()
+	some_big_asteroid_spawner.asteroid_sizes = [Asteroid.AsteroidSize.MEDIUM, Asteroid.AsteroidSize.LARGE]
 
 func _process(delta):
 	var queued_wave = wave.front();

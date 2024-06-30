@@ -6,6 +6,7 @@ const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
 
 @onready var timer: Timer = $Timer
+var asteroid_sizes = Asteroid.AsteroidSize.values()
 
 #
 #
@@ -18,7 +19,7 @@ func _ready():
 func _on_timer_timeout():
 	var asteroid = asteroid_asset.instantiate()
 	asteroid.position.y = randi_range(-500, 500)
-	asteroid.size = Asteroid.AsteroidSize.values().pick_random()
+	asteroid.size = asteroid_sizes.pick_random()
 	spawn_asteroid(asteroid)
 
 #

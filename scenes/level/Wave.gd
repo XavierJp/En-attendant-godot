@@ -36,10 +36,25 @@ var wave = [
 	
 	#
 	
-	[50, func end_on_wave(): 
+	[50, func some_big_asteroid(): some_big_asteroid_spawner.timer.start()],
+	
+	#
+	
+	[75, func no_more_asteroid(): some_big_asteroid_spawner.timer.stop()],
+	
+	#
+	
+	[150, func some_big_asteroid(): some_big_asteroid_spawner.timer.start()],
+	
+	#
+	
+	[200, func end_on_wave(): 
 	some_asteroid_spawner.timer.stop()
 	some_big_asteroid_spawner.timer.stop()
-	ended.emit()]
+	#
+	ended.emit()
+	]
+	,
 ]
 
 func _ready():

@@ -3,6 +3,7 @@ extends Node2D
 @onready var score_label: Label = $Camera2D/VBoxContainer/ScoreLabel
 @onready var player: HumanPlayer = $Camera2D/HumanPlayer
 @onready var ost_music: AudioStreamPlayer = $OSTMusic
+@onready var wave: Wave = $Camera2D/Wave
 @onready var pause_menu = $Camera2D/PauseMenu
 @onready var ghost_gauge_bar = $Camera2D/GhostGauge/GhostGaugeBar
 
@@ -25,7 +26,10 @@ func _ready():
 
 	Store.start_new_run()
 	ost_music.play()
-	
+
+	wave.ended.connect(func on_ended(): 
+		print("ended")
+	)	
 
 func _process(delta):
 	# Check for pause

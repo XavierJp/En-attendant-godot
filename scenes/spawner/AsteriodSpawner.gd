@@ -1,9 +1,11 @@
-extends EntitySpawner
+class_name AsteroidSpawner extends EntitySpawner
 
 const ghost_asset = preload("res://scenes/player/ghost_player.tscn")	
 const small_ship_asset = preload("res://scenes/enemies/small_ship.tscn")
 const big_ship_asset = preload("res://scenes/enemies/big_ship.tscn")
 const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
+
+@onready var timer: Timer = $Timer
 
 #
 #
@@ -11,6 +13,7 @@ const asteroid_asset = preload("res://scenes/enemies/asteroid.tscn")
 
 func _ready():
 	initial_timer = 1
+	timer.autostart = true
 
 func _on_timer_timeout():
 	var asteroid = asteroid_asset.instantiate()
@@ -23,7 +26,7 @@ func _on_timer_timeout():
 #
 
 func update_timer():
-	$Timer.wait_time = initial_timer / ((Store.position_score / 3) + 1) 
+	timer.wait_time = initial_timer / ((Store.position_score / 3) + 1) 
 
 #
 #

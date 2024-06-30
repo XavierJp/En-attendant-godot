@@ -5,3 +5,6 @@
 
 [node name="AsteroidSpawner" instance=ExtResource("1_moktk")]
 script = ExtResource("1_utr2s")
+
+[node name="Timer" parent="." index="0"]
+wait_time = 1.0

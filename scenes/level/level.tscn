@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_rhcvp"]
 [ext_resource type="PackedScene" uid="uid://dr3j8wjug48fh" path="res://scenes/spawner/ship_spawner.tscn" id="3_1luf1"]
 [ext_resource type="Script" path="res://scenes/level/ExplosionSpawner.gd" id="3_8svbx"]
-[ext_resource type="PackedScene" uid="uid://cfa7s75uig7ix" path="res://scenes/spawner/asteroid_spawner.tscn" id="3_gsjhc"]
 [ext_resource type="PackedScene" uid="uid://0us03b4gylxm" path="res://scenes/spawner/ghost_spawner.tscn" id="3_kn20r"]
 [ext_resource type="PackedScene" uid="uid://dxa6xhibph28i" path="res://scenes/player/human_player.tscn" id="3_nu3al"]
 [ext_resource type="Script" path="res://scenes/level/Camera2D.gd" id="3_sw05i"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cj8bkjl3vlpma" path="res://scenes/UIs/space_parallax_background.tscn" id="7_b1c0c"]
 [ext_resource type="Texture2D" uid="uid://bdsjuy1emdydq" path="res://assets/ui/load_bar/empty.png" id="7_gei63"]
 [ext_resource type="Texture2D" uid="uid://ch7oycpylsc1d" path="res://assets/ui/load_bar/cadre.png" id="8_2pox5"]
+[ext_resource type="PackedScene" uid="uid://bxvw613he4ed7" path="res://scenes/level/Wave.tscn" id="8_lwvyd"]
 [ext_resource type="Texture2D" uid="uid://dkebslfdystif" path="res://assets/ui/load_bar/inner.png" id="9_qm5xk"]
 [ext_resource type="Script" path="res://scenes/level/GhostGauge.gd" id="9_r03ci"]
 [ext_resource type="Texture2D" uid="uid://hvb41l1pb0m7" path="res://assets/ui/load_bar/inner2.png" id="9_xxsx0"]
@@ -36,11 +36,10 @@ position = Vector2(1595, 0)
 
 [node name="GhostSpawner" parent="Camera2D" instance=ExtResource("3_kn20r")]
 
-[node name="AsteroidSpawner" parent="Camera2D" instance=ExtResource("3_gsjhc")]
-position = Vector2(1827, -4)
-
 [node name="HumanPlayer" parent="Camera2D" instance=ExtResource("3_nu3al")]
 unique_name_in_owner = true
+
+[node name="Wave" parent="Camera2D" instance=ExtResource("8_lwvyd")]
 
 [node name="CameraWall" type="StaticBody2D" parent="Camera2D"]
 position = Vector2(0, -3)

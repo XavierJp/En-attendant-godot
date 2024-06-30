@@ -1,6 +1,6 @@
 class_name Shield extends Area2D
 
-var damage = 12
+var damage = 6
 
 var level = 1
 

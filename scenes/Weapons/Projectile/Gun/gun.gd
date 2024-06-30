@@ -21,7 +21,7 @@ func _on_bullet_timer_timeout():
 	for angle in angles():
 		var new_bullet = bullet.instantiate()
 		new_bullet.angle = angle
-		new_bullet.damage = damage
+		new_bullet.damage = damage * level
 		$ProjectileStartPosition.add_child(new_bullet)
 
 func upgrade():

@@ -20,8 +20,9 @@ func pause():
 func _ready():
 	player.global_position.y = randi_range(-1000, 1000)
 	#player.inventory.weapons = Store.weapons
-	for weapon in player.inventory.create_weapons():
-		player.add_child(weapon)
+	
+	player.inventory.equip(player)
+
 	Store.start_new_run()
 	ost_music.play()
 	
@@ -33,8 +34,6 @@ func _process(delta):
 	
 	ghost_gauge_bar.value = Store.ghost_gauge
 	score_label.text = "Score : "+str(Store.get_score())
-	for weapon in player.inventory.weapons:
-		if Store.get_score() > weapon.level * 10 ** weapon.level + 1:
-			weapon.upgrade()
+
 
 

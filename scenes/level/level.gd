@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var dist_score_label: Label = $Camera2D/VBoxContainer/DistScore
+@onready var kill_score_label: Label = $Camera2D/VBoxContainer/KillScore
 @onready var score_label: Label = $Camera2D/VBoxContainer/ScoreLabel
 @onready var player: HumanPlayer = $Camera2D/HumanPlayer
 @onready var ost_music: AudioStreamPlayer = $OSTMusic
@@ -37,7 +39,8 @@ func _process(delta):
 		pause()
 	
 	ghost_gauge_bar.value = Store.ghost_gauge
-	score_label.text = "Score : "+str(Store.get_score())
+	dist_score_label.text = "Dist : "+str(int(Store.position_score)) + "km"
+	kill_score_label.text = "Kills : "+str(Store.kill_score)
 
 
 
